@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SavedSearchesApp } from '../components/SavedSearchesApp';
+---
+
+<Layout title="Saved searches">
+  <h1>Saved searches</h1>
+  <SavedSearchesApp client:load />
+</Layout>

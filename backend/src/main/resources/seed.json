@@ -1,0 +1,2558 @@
+{
+  "sellers": [
+    {
+      "id": "sel_0001",
+      "displayName": "Moebelhof Neukoelln",
+      "email": "info@moebelhof-neukoelln.de",
+      "createdAt": "2025-04-17T22:38:08Z",
+      "isCommercial": true
+    },
+    {
+      "id": "sel_0002",
+      "displayName": "Anna B.",
+      "email": "anna.b2@webmail.de",
+      "createdAt": "2025-04-21T01:06:59Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0003",
+      "displayName": "Maria S.",
+      "email": "maria.s3@webmail.de",
+      "createdAt": "2026-04-01T07:02:34Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0004",
+      "displayName": "Peter L.",
+      "email": "peter.l4@webmail.de",
+      "createdAt": "2025-12-29T12:37:18Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0005",
+      "displayName": "Sophie M.",
+      "email": "sophie.m5@webmail.de",
+      "createdAt": "2025-09-02T00:33:51Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0006",
+      "displayName": "Lukas T.",
+      "email": "lukas.t6@webmail.de",
+      "createdAt": "2025-08-05T08:29:12Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0007",
+      "displayName": "TechBoerse Berlin",
+      "email": "kontakt@techboerse-berlin.de",
+      "createdAt": "2025-10-25T07:43:03Z",
+      "isCommercial": true
+    },
+    {
+      "id": "sel_0008",
+      "displayName": "Felix H.",
+      "email": "felix.h8@webmail.de",
+      "createdAt": "2025-11-06T13:49:20Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0009",
+      "displayName": "Julia W.",
+      "email": "julia.w9@webmail.de",
+      "createdAt": "2025-11-04T00:38:32Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0010",
+      "displayName": "Max R.",
+      "email": "max.r10@webmail.de",
+      "createdAt": "2025-11-03T19:32:55Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0011",
+      "displayName": "Lea N.",
+      "email": "lea.n11@webmail.de",
+      "createdAt": "2026-01-07T20:54:04Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0012",
+      "displayName": "Paul D.",
+      "email": "paul.d12@webmail.de",
+      "createdAt": "2025-04-21T10:31:28Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0013",
+      "displayName": "Fahrradladen Kreuzberg",
+      "email": "service@fahrradladen-kreuzberg.de",
+      "createdAt": "2025-09-15T13:47:19Z",
+      "isCommercial": true
+    },
+    {
+      "id": "sel_0014",
+      "displayName": "Tim P.",
+      "email": "tim.p14@webmail.de",
+      "createdAt": "2025-08-13T04:38:48Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0015",
+      "displayName": "Nina G.",
+      "email": "nina.g15@webmail.de",
+      "createdAt": "2025-04-28T00:11:37Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0016",
+      "displayName": "Jan Z.",
+      "email": "jan.z16@webmail.de",
+      "createdAt": "2026-03-25T10:19:02Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0017",
+      "displayName": "Clara A.",
+      "email": "clara.a17@webmail.de",
+      "createdAt": "2025-11-15T19:54:28Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0018",
+      "displayName": "Tom C.",
+      "email": "tom.c18@webmail.de",
+      "createdAt": "2026-06-05T15:07:01Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0019",
+      "displayName": "Kiez Kuechenstudio",
+      "email": "info@kiez-kuechenstudio.de",
+      "createdAt": "2025-12-22T10:07:02Z",
+      "isCommercial": true
+    },
+    {
+      "id": "sel_0020",
+      "displayName": "Ben Q.",
+      "email": "ben.q20@webmail.de",
+      "createdAt": "2025-02-21T21:44:15Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0021",
+      "displayName": "Mia V.",
+      "email": "mia.v21@webmail.de",
+      "createdAt": "2025-04-26T03:44:36Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0022",
+      "displayName": "Noah U.",
+      "email": "noah.u22@webmail.de",
+      "createdAt": "2025-05-01T13:20:17Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0023",
+      "displayName": "Lena I.",
+      "email": "lena.i23@webmail.de",
+      "createdAt": "2025-09-13T20:20:50Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0024",
+      "displayName": "Finn J.",
+      "email": "finn.j24@webmail.de",
+      "createdAt": "2025-06-15T22:21:53Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0025",
+      "displayName": "Gartenwelt Pankow",
+      "email": "kontakt@gartenwelt-pankow.de",
+      "createdAt": "2025-08-22T11:32:41Z",
+      "isCommercial": true
+    },
+    {
+      "id": "sel_0026",
+      "displayName": "Leon X.",
+      "email": "leon.x26@webmail.de",
+      "createdAt": "2026-02-16T10:07:26Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0027",
+      "displayName": "Marie R.",
+      "email": "marie.r27@webmail.de",
+      "createdAt": "2026-02-13T15:39:32Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0028",
+      "displayName": "David B.",
+      "email": "david.b28@webmail.de",
+      "createdAt": "2025-04-21T15:22:37Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0029",
+      "displayName": "Katharina K.",
+      "email": "katharina.k29@webmail.de",
+      "createdAt": "2025-03-14T11:03:13Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0030",
+      "displayName": "Simon S.",
+      "email": "simon.s30@webmail.de",
+      "createdAt": "2026-01-15T09:08:08Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0031",
+      "displayName": "Buecherstube Mitte",
+      "email": "post@buecherstube-mitte.de",
+      "createdAt": "2025-04-16T19:36:57Z",
+      "isCommercial": true
+    },
+    {
+      "id": "sel_0032",
+      "displayName": "Erik M.",
+      "email": "erik.m32@webmail.de",
+      "createdAt": "2026-02-23T14:01:45Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0033",
+      "displayName": "Vanessa T.",
+      "email": "vanessa.t33@webmail.de",
+      "createdAt": "2025-04-27T03:30:21Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0034",
+      "displayName": "Moritz F.",
+      "email": "moritz.f34@webmail.de",
+      "createdAt": "2026-03-27T22:55:18Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0035",
+      "displayName": "Jonas K.",
+      "email": "jonas.k35@webmail.de",
+      "createdAt": "2025-01-24T09:06:36Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0036",
+      "displayName": "Anna B.",
+      "email": "anna.b36@webmail.de",
+      "createdAt": "2025-11-15T07:02:22Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0037",
+      "displayName": "Maria S.",
+      "email": "maria.s37@webmail.de",
+      "createdAt": "2025-09-04T22:18:39Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0038",
+      "displayName": "Peter L.",
+      "email": "peter.l38@webmail.de",
+      "createdAt": "2025-08-08T15:12:11Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0039",
+      "displayName": "Sophie M.",
+      "email": "sophie.m39@webmail.de",
+      "createdAt": "2025-06-06T06:36:42Z",
+      "isCommercial": false
+    },
+    {
+      "id": "sel_0040",
+      "displayName": "Lukas T.",
+      "email": "lukas.t40@webmail.de",
+      "createdAt": "2025-01-11T04:58:59Z",
+      "isCommercial": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "elektronik",
+      "legacyId": 12,
+      "parentId": null,
+      "name": "Elektronik"
+    },
+    {
+      "id": "elektronik.audio",
+      "legacyId": 1204,
+      "parentId": "elektronik",
+      "name": "Audio & HiFi"
+    },
+    {
+      "id": "elektronik.foto",
+      "legacyId": 1207,
+      "parentId": "elektronik",
+      "name": "Foto"
+    },
+    {
+      "id": "elektronik.computer",
+      "legacyId": 1211,
+      "parentId": "elektronik",
+      "name": "Computer"
+    },
+    {
+      "id": "haushalt",
+      "legacyId": 30,
+      "parentId": null,
+      "name": "Haushalt & Wohnen"
+    },
+    {
+      "id": "haushalt.moebel",
+      "legacyId": 3002,
+      "parentId": "haushalt",
+      "name": "Moebel"
+    },
+    {
+      "id": "haushalt.kueche",
+      "legacyId": 3005,
+      "parentId": "haushalt",
+      "name": "Kueche"
+    },
+    {
+      "id": "haushalt.garten",
+      "legacyId": 3009,
+      "parentId": "haushalt",
+      "name": "Garten"
+    },
+    {
+      "id": "freizeit",
+      "legacyId": 51,
+      "parentId": null,
+      "name": "Freizeit"
+    },
+    {
+      "id": "freizeit.fahrraeder",
+      "legacyId": 5103,
+      "parentId": "freizeit",
+      "name": "Fahrraeder"
+    },
+    {
+      "id": "freizeit.buecher",
+      "legacyId": 5108,
+      "parentId": "freizeit",
+      "name": "Buecher"
+    }
+  ],
+  "listings": [
+    {
+      "id": "lst_2f7d1e",
+      "sellerId": "sel_0017",
+      "title": "Canon EOS 600D mit Objektiv, zu verschenken, nur Abholung",
+      "description": "",
+      "categoryId": "elektronik.foto",
+      "priceCents": null,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2026-03-02T02:48:55Z",
+      "publishedAt": "2026-03-05T21:35:09Z",
+      "imageIds": [
+        "img_0a58",
+        "img_9fd6",
+        "img_7d2d",
+        "img_3279"
+      ]
+    },
+    {
+      "id": "lst_0e436d",
+      "sellerId": "sel_0022",
+      "title": "Harry Potter Sammlung komplett, zu verschenken, nur Abholung",
+      "description": "Muss aus Platzgruenden weg.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": null,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10967",
+      "createdAt": "2026-07-11T21:08:27Z",
+      "publishedAt": "2026-07-16T12:16:19Z",
+      "imageIds": [
+        "img_0d4c",
+        "img_1f6d"
+      ]
+    },
+    {
+      "id": "lst_64dd34",
+      "sellerId": "sel_0008",
+      "title": "Rasenmaeher Elektro Bosch, zu verschenken",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "haushalt.garten",
+      "priceCents": null,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10115",
+      "createdAt": "2026-06-04T15:27:15Z",
+      "publishedAt": "2026-06-05T17:19:17Z",
+      "imageIds": [
+        "img_40a5",
+        "img_0825"
+      ]
+    },
+    {
+      "id": "lst_ee18c1",
+      "sellerId": "sel_0039",
+      "title": "Laptop Lenovo ThinkPad T480",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 136700,
+      "currency": "EUR",
+      "status": "paused",
+      "postcode": "10967",
+      "createdAt": "2026-07-13T01:54:50Z",
+      "publishedAt": "2026-07-14T13:32:53Z",
+      "imageIds": [
+        "img_7a1e",
+        "img_048d"
+      ]
+    },
+    {
+      "id": "lst_4a8a3b",
+      "sellerId": "sel_0005",
+      "title": "Kaffeemaschine DeLonghi, zu verschenken, nur Abholung",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": null,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2026-08-22T18:00:41Z",
+      "publishedAt": "2026-08-27T13:04:48Z",
+      "imageIds": [
+        "img_2a02",
+        "img_1355",
+        "img_793a"
+      ]
+    },
+    {
+      "id": "lst_6a5e10",
+      "sellerId": "sel_0001",
+      "title": "Sofa 3-Sitzer, nur Abholung",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 163600,
+      "currency": "EUR",
+      "status": "draft",
+      "postcode": "10777",
+      "createdAt": "2026-01-29T23:06:47Z",
+      "publishedAt": null,
+      "imageIds": [
+        "img_0bd4"
+      ]
+    },
+    {
+      "id": "lst_e78b4d",
+      "sellerId": "sel_0017",
+      "title": "Technics SL-1210 MK2 Plattenspieler, zu verschenken, nur Abholung",
+      "description": "Muss aus Platzgruenden weg.",
+      "categoryId": "elektronik.audio",
+      "priceCents": null,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10553",
+      "createdAt": "2026-02-25T12:05:58Z",
+      "publishedAt": "2026-03-01T21:26:51Z",
+      "imageIds": [
+        "img_cb2c",
+        "img_cdc5",
+        "img_abed"
+      ]
+    },
+    {
+      "id": "lst_39270b",
+      "sellerId": "sel_0010",
+      "title": "Bierkiste Sitzbank, selbst gebaut, zu verschenken, nur Abholung",
+      "description": "Muss aus Platzgruenden weg.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": null,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12459",
+      "createdAt": "2026-07-04T15:59:58Z",
+      "publishedAt": "2026-07-06T07:38:28Z",
+      "imageIds": [
+        "img_8c78",
+        "img_d7b0"
+      ]
+    },
+    {
+      "id": "lst_05d089",
+      "sellerId": "sel_0022",
+      "title": "Kochbuch Vegetarisch, zu verschenken, nur Abholung",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": null,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2026-01-25T04:30:39Z",
+      "publishedAt": "2026-01-26T09:26:23Z",
+      "imageIds": [
+        "img_90d6"
+      ]
+    },
+    {
+      "id": "lst_d7fd42",
+      "sellerId": "sel_0008",
+      "title": "Bluetooth Lautsprecher JBL Flip",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 0,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12099",
+      "createdAt": "2026-08-15T18:23:25Z",
+      "publishedAt": "2026-08-16T19:56:38Z",
+      "imageIds": [
+        "img_32f7",
+        "img_4c3c",
+        "img_b7a9"
+      ]
+    },
+    {
+      "id": "lst_4c8454",
+      "sellerId": "sel_0036",
+      "title": "Objektiv Sigma 18-200mm",
+      "description": "Privatverkauf, keine Garantie und Ruecknahme.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 0,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10247",
+      "createdAt": "2026-05-07T05:08:14Z",
+      "publishedAt": "2026-05-09T22:48:46Z",
+      "imageIds": [
+        "img_e2d1",
+        "img_fcff",
+        "img_d26c"
+      ]
+    },
+    {
+      "id": "lst_213ef6",
+      "sellerId": "sel_0022",
+      "title": "Mountainbike Cube 29 Zoll",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 0,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12047",
+      "createdAt": "2026-08-03T20:20:50Z",
+      "publishedAt": "2026-08-06T22:26:32Z",
+      "imageIds": [
+        "img_c665",
+        "img_774c",
+        "img_1d1f",
+        "img_0083"
+      ]
+    },
+    {
+      "id": "lst_47fa54",
+      "sellerId": "sel_0032",
+      "title": "Gartenmoebel Set 4-teilig",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 115000,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10119",
+      "createdAt": "2026-04-01T17:29:08Z",
+      "publishedAt": "2026-04-02T01:49:31Z",
+      "imageIds": [
+        "img_b089",
+        "img_2e4e",
+        "img_5688"
+      ]
+    },
+    {
+      "id": "lst_25be5d",
+      "sellerId": "sel_0013",
+      "title": "Monitor Dell 24 Zoll Full HD",
+      "description": "Muss aus Platzgruenden weg.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 112300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10553",
+      "createdAt": "2026-04-28T00:37:12Z",
+      "publishedAt": "2026-05-01T16:58:47Z",
+      "imageIds": [
+        "img_d7f6",
+        "img_d2f7"
+      ]
+    },
+    {
+      "id": "lst_878b7a",
+      "sellerId": "sel_0026",
+      "title": "Krimi Romanreihe",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 53800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2026-07-29T02:53:43Z",
+      "publishedAt": "2026-08-01T04:27:33Z",
+      "imageIds": [
+        "img_0928"
+      ]
+    },
+    {
+      "id": "lst_ebd434",
+      "sellerId": "sel_0015",
+      "title": "Kochtopf-Set Edelstahl",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 106400,
+      "currency": "EUR",
+      "status": "paused",
+      "postcode": "10967",
+      "createdAt": "2026-04-28T09:05:51Z",
+      "publishedAt": "2026-05-01T11:08:57Z",
+      "imageIds": [
+        "img_5f72",
+        "img_29d4"
+      ]
+    },
+    {
+      "id": "lst_a31b24",
+      "sellerId": "sel_0034",
+      "title": "Kleiderschrank IKEA Pax",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 120500,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10247",
+      "createdAt": "2026-08-17T12:39:28Z",
+      "publishedAt": "2026-08-20T04:22:06Z",
+      "imageIds": [
+        "img_6c8e",
+        "img_54d0",
+        "img_f5d9",
+        "img_6d07"
+      ]
+    },
+    {
+      "id": "lst_cc45d2",
+      "sellerId": "sel_0025",
+      "title": "Grill Weber Kettle",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 222800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2026-02-12T02:49:13Z",
+      "publishedAt": "2026-02-12T10:17:20Z",
+      "imageIds": [
+        "img_fd57"
+      ]
+    },
+    {
+      "id": "lst_14cc9e",
+      "sellerId": "sel_0002",
+      "title": "Kopfhoerer Sony WH-1000XM4",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 8300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10553",
+      "createdAt": "2026-05-30T09:35:20Z",
+      "publishedAt": "2026-06-04T01:23:47Z",
+      "imageIds": [
+        "img_838b"
+      ]
+    },
+    {
+      "id": "lst_f3bec3",
+      "sellerId": "sel_0022",
+      "title": "Mechanische Tastatur Cherry MX",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 204500,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10405",
+      "createdAt": "2026-05-28T09:08:20Z",
+      "publishedAt": "2026-05-28T16:17:01Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_125b0a",
+      "sellerId": "sel_0006",
+      "title": "Blumentoepfe Terracotta 5er Set",
+      "description": "Privatverkauf, keine Garantie und Ruecknahme.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 221600,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10553",
+      "createdAt": "2026-02-18T07:17:23Z",
+      "publishedAt": "2026-02-23T01:01:25Z",
+      "imageIds": [
+        "img_6615"
+      ]
+    },
+    {
+      "id": "lst_27bf02",
+      "sellerId": "sel_0024",
+      "title": "Grafikkarte Nvidia GTX 1660",
+      "description": "",
+      "categoryId": "elektronik.computer",
+      "priceCents": 93600,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12047",
+      "createdAt": "2025-11-16T20:23:42Z",
+      "publishedAt": "2025-11-21T14:35:40Z",
+      "imageIds": [
+        "img_3034"
+      ]
+    },
+    {
+      "id": "lst_7ca25e",
+      "sellerId": "sel_0006",
+      "title": "Esstisch Massivholz Eiche",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 247400,
+      "currency": "EUR",
+      "status": "deleted",
+      "postcode": "10115",
+      "createdAt": "2025-11-21T03:36:06Z",
+      "publishedAt": "2025-11-21T05:19:15Z",
+      "imageIds": [
+        "img_9515",
+        "img_4148"
+      ]
+    },
+    {
+      "id": "lst_02e6c1",
+      "sellerId": "sel_0019",
+      "title": "Heckenschere Gardena",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 73000,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10999",
+      "createdAt": "2026-07-31T00:59:06Z",
+      "publishedAt": "2026-08-01T18:18:28Z",
+      "imageIds": [
+        "img_4f6c",
+        "img_7744",
+        "img_8664"
+      ]
+    },
+    {
+      "id": "lst_8e323c",
+      "sellerId": "sel_0039",
+      "title": "Stativ Manfrotto Alu",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 171700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10247",
+      "createdAt": "2026-08-23T17:33:57Z",
+      "publishedAt": "2026-08-28T04:04:16Z",
+      "imageIds": [
+        "img_856e"
+      ]
+    },
+    {
+      "id": "lst_c27fb6",
+      "sellerId": "sel_0029",
+      "title": "Standmixer Bosch",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 222700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10967",
+      "createdAt": "2025-12-29T08:49:27Z",
+      "publishedAt": "2026-01-02T01:50:52Z",
+      "imageIds": [
+        "img_0811",
+        "img_1a4e"
+      ]
+    },
+    {
+      "id": "lst_52aa92",
+      "sellerId": "sel_0038",
+      "title": "Drucker HP LaserJet Pro",
+      "description": "",
+      "categoryId": "elektronik.computer",
+      "priceCents": 71600,
+      "currency": "EUR",
+      "status": "expired",
+      "postcode": "13086",
+      "createdAt": "2026-03-31T20:37:17Z",
+      "publishedAt": "2026-04-04T01:24:07Z",
+      "imageIds": [
+        "img_a064",
+        "img_293f",
+        "img_e483"
+      ]
+    },
+    {
+      "id": "lst_1e7638",
+      "sellerId": "sel_0015",
+      "title": "Buecherregal weiss",
+      "description": "",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 179300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2025-11-07T08:54:49Z",
+      "publishedAt": "2025-11-07T19:26:00Z",
+      "imageIds": [
+        "img_b33a",
+        "img_7f6d",
+        "img_690c"
+      ]
+    },
+    {
+      "id": "lst_0d6a92",
+      "sellerId": "sel_0005",
+      "title": "Bildband Berlin",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 145800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2026-02-04T14:51:33Z",
+      "publishedAt": "2026-02-07T22:49:30Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_baee8f",
+      "sellerId": "sel_0025",
+      "title": "Geschirrspueler Bosch, gebraucht",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 52100,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2026-03-10T08:24:48Z",
+      "publishedAt": "2026-03-12T09:08:48Z",
+      "imageIds": [
+        "img_794e",
+        "img_6aad"
+      ]
+    },
+    {
+      "id": "lst_41baa9",
+      "sellerId": "sel_0035",
+      "title": "Sessel Retro 70er Jahre",
+      "description": "Muss aus Platzgruenden weg.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 198200,
+      "currency": "EUR",
+      "status": "draft",
+      "postcode": "13355",
+      "createdAt": "2026-03-29T17:56:15Z",
+      "publishedAt": null,
+      "imageIds": [
+        "img_5ce0"
+      ]
+    },
+    {
+      "id": "lst_62f1a7",
+      "sellerId": "sel_0002",
+      "title": "Rennrad Canyon Ultimate",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 54300,
+      "currency": "EUR",
+      "status": "expired",
+      "postcode": "12099",
+      "createdAt": "2026-01-07T20:04:07Z",
+      "publishedAt": "2026-01-11T04:57:06Z",
+      "imageIds": [
+        "img_9e14",
+        "img_6d3a",
+        "img_45a2"
+      ]
+    },
+    {
+      "id": "lst_fba3c5",
+      "sellerId": "sel_0038",
+      "title": "Sachbuch Geschichte",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 246900,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2026-02-09T19:39:02Z",
+      "publishedAt": "2026-02-13T20:58:28Z",
+      "imageIds": [
+        "img_39bd",
+        "img_e9aa"
+      ]
+    },
+    {
+      "id": "lst_7473d0",
+      "sellerId": "sel_0029",
+      "title": "Toaster Krups",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 53300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10553",
+      "createdAt": "2025-11-09T11:38:49Z",
+      "publishedAt": "2025-11-10T14:22:28Z",
+      "imageIds": [
+        "img_df46",
+        "img_ffba",
+        "img_4497"
+      ]
+    },
+    {
+      "id": "lst_ed5797",
+      "sellerId": "sel_0010",
+      "title": "Gewaechshaus klein",
+      "description": "Muss aus Platzgruenden weg.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 143600,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10967",
+      "createdAt": "2026-02-17T02:31:50Z",
+      "publishedAt": "2026-02-19T04:12:14Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_ecbb1a",
+      "sellerId": "sel_0001",
+      "title": "Kinderfahrrad Puky 20 Zoll",
+      "description": "Abholung in Berlin, Versand gegen Aufpreis moeglich.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 144000,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10115",
+      "createdAt": "2025-12-04T10:07:34Z",
+      "publishedAt": "2025-12-05T16:28:40Z",
+      "imageIds": [
+        "img_1454",
+        "img_3e96",
+        "img_69e2",
+        "img_3812"
+      ]
+    },
+    {
+      "id": "lst_680536",
+      "sellerId": "sel_0004",
+      "title": "Fahrradhelm Uvex Groesse M",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 188000,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10999",
+      "createdAt": "2026-07-01T06:06:19Z",
+      "publishedAt": "2026-07-06T03:11:33Z",
+      "imageIds": [
+        "img_2001"
+      ]
+    },
+    {
+      "id": "lst_6e45f4",
+      "sellerId": "sel_0015",
+      "title": "Kommode Vintage",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 130800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10119",
+      "createdAt": "2025-11-25T18:48:02Z",
+      "publishedAt": "2025-11-29T06:31:49Z",
+      "imageIds": [
+        "img_e787",
+        "img_6bb4",
+        "img_4958"
+      ]
+    },
+    {
+      "id": "lst_ca8005",
+      "sellerId": "sel_0032",
+      "title": "Sofortbildkamera Polaroid Now",
+      "description": "Muss aus Platzgruenden weg.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 202900,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10967",
+      "createdAt": "2026-02-20T09:04:25Z",
+      "publishedAt": "2026-02-22T14:30:09Z",
+      "imageIds": [
+        "img_216a",
+        "img_cd00",
+        "img_868c",
+        "img_2bda"
+      ]
+    },
+    {
+      "id": "lst_73d90a",
+      "sellerId": "sel_0004",
+      "title": "Kuechenmaschine KitchenAid",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 84900,
+      "currency": "EUR",
+      "status": "paused",
+      "postcode": "12047",
+      "createdAt": "2026-02-19T02:49:07Z",
+      "publishedAt": "2026-02-21T02:19:48Z",
+      "imageIds": [
+        "img_d6f5",
+        "img_f154",
+        "img_9216",
+        "img_2610"
+      ]
+    },
+    {
+      "id": "lst_263540",
+      "sellerId": "sel_0038",
+      "title": "Stereo Verstaerker Denon PMA",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 11000,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12099",
+      "createdAt": "2026-07-30T21:39:05Z",
+      "publishedAt": "2026-08-04T10:52:24Z",
+      "imageIds": [
+        "img_0816"
+      ]
+    },
+    {
+      "id": "lst_ec75ed",
+      "sellerId": "sel_0021",
+      "title": "Reisefuehrer Italien",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 18900,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2026-01-06T12:08:16Z",
+      "publishedAt": "2026-01-08T08:29:07Z",
+      "imageIds": [
+        "img_47c1"
+      ]
+    },
+    {
+      "id": "lst_2b43bd",
+      "sellerId": "sel_0010",
+      "title": "Sonnenschirm 3m",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 38300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10999",
+      "createdAt": "2026-05-07T15:18:01Z",
+      "publishedAt": "2026-05-09T22:59:48Z",
+      "imageIds": [
+        "img_5717"
+      ]
+    },
+    {
+      "id": "lst_492569",
+      "sellerId": "sel_0008",
+      "title": "E-Bike Kalkhoff Trekking",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 35400,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12047",
+      "createdAt": "2026-02-12T11:05:40Z",
+      "publishedAt": "2026-02-16T03:49:54Z",
+      "imageIds": [
+        "img_6a6b",
+        "img_20fb"
+      ]
+    },
+    {
+      "id": "lst_241b3c",
+      "sellerId": "sel_0028",
+      "title": "Laubsauger Elektro",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 1100,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2026-01-14T13:20:17Z",
+      "publishedAt": "2026-01-17T23:30:23Z",
+      "imageIds": [
+        "img_0d9d"
+      ]
+    },
+    {
+      "id": "lst_c16a43",
+      "sellerId": "sel_0018",
+      "title": "Gaming PC selbst gebaut",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2025-11-02T18:26:57Z",
+      "publishedAt": "2025-11-05T12:04:48Z",
+      "imageIds": [
+        "img_e237",
+        "img_5893",
+        "img_04e2",
+        "img_2fa9"
+      ]
+    },
+    {
+      "id": "lst_c30ab7",
+      "sellerId": "sel_0001",
+      "title": "Notebook Acer Aspire",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 204300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2026-05-06T03:35:58Z",
+      "publishedAt": "2026-05-08T15:17:15Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_5cf2a0",
+      "sellerId": "sel_0007",
+      "title": "Schreibtisch hoehenverstellbar",
+      "description": "Muss aus Platzgruenden weg.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10553",
+      "createdAt": "2026-02-24T05:05:05Z",
+      "publishedAt": "2026-02-25T00:08:02Z",
+      "imageIds": [
+        "img_712f",
+        "img_a1bf"
+      ]
+    },
+    {
+      "id": "lst_0619bb",
+      "sellerId": "sel_0004",
+      "title": "Couchtisch Glas",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 115400,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12047",
+      "createdAt": "2026-04-22T14:56:49Z",
+      "publishedAt": "2026-04-26T02:12:09Z",
+      "imageIds": [
+        "img_175b",
+        "img_bd62"
+      ]
+    },
+    {
+      "id": "lst_8c123d",
+      "sellerId": "sel_0007",
+      "title": "Bettgestell 140x200",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 15000,
+      "currency": "EUR",
+      "status": "draft",
+      "postcode": "10777",
+      "createdAt": "2026-03-22T22:47:24Z",
+      "publishedAt": null,
+      "imageIds": [
+        "img_e065"
+      ]
+    },
+    {
+      "id": "lst_e680a9",
+      "sellerId": "sel_0012",
+      "title": "Hochbeet Holz",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 197900,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13158",
+      "createdAt": "2026-01-08T02:37:46Z",
+      "publishedAt": "2026-01-10T20:27:40Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_d0d271",
+      "sellerId": "sel_0038",
+      "title": "Garderobe Flur",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 170000,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10999",
+      "createdAt": "2025-12-13T17:00:51Z",
+      "publishedAt": "2025-12-17T15:34:18Z",
+      "imageIds": [
+        "img_2f31"
+      ]
+    },
+    {
+      "id": "lst_1eac44",
+      "sellerId": "sel_0015",
+      "title": "Citybike Hollandrad",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 193400,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2025-11-13T01:51:47Z",
+      "publishedAt": "2025-11-16T20:21:51Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_1c4b7a",
+      "sellerId": "sel_0027",
+      "title": "Gartenschlauch 30m mit Zubehoer",
+      "description": "Abholung in Berlin, Versand gegen Aufpreis moeglich.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 45400,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10115",
+      "createdAt": "2025-11-05T16:18:22Z",
+      "publishedAt": "2025-11-08T04:17:29Z",
+      "imageIds": [
+        "img_f5ea",
+        "img_df9a",
+        "img_5510",
+        "img_4d64"
+      ]
+    },
+    {
+      "id": "lst_f6adb7",
+      "sellerId": "sel_0034",
+      "title": "BMX Rad",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 163900,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2026-07-29T13:19:26Z",
+      "publishedAt": "2026-08-01T22:48:08Z",
+      "imageIds": [
+        "img_3f4b"
+      ]
+    },
+    {
+      "id": "lst_0099f2",
+      "sellerId": "sel_0029",
+      "title": "Kompostbehaelter",
+      "description": "Muss aus Platzgruenden weg.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 158700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2026-02-19T00:45:12Z",
+      "publishedAt": "2026-02-22T13:51:52Z",
+      "imageIds": [
+        "img_4f3c",
+        "img_5cb3",
+        "img_8fb5"
+      ]
+    },
+    {
+      "id": "lst_6c2db6",
+      "sellerId": "sel_0026",
+      "title": "Gartenbank Teakholz",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 128200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10553",
+      "createdAt": "2026-02-17T03:31:40Z",
+      "publishedAt": "2026-02-17T21:12:22Z",
+      "imageIds": [
+        "img_13f6",
+        "img_49fd",
+        "img_211e",
+        "img_d84c"
+      ]
+    },
+    {
+      "id": "lst_7c751a",
+      "sellerId": "sel_0038",
+      "title": "Plattenspieler Dual CS 505",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 133500,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10119",
+      "createdAt": "2026-04-12T22:48:31Z",
+      "publishedAt": "2026-04-15T07:29:12Z",
+      "imageIds": [
+        "img_498d",
+        "img_a62c",
+        "img_f844"
+      ]
+    },
+    {
+      "id": "lst_2567bb",
+      "sellerId": "sel_0029",
+      "title": "Waffeleisen Severin",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 132800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2026-08-18T12:58:58Z",
+      "publishedAt": "2026-08-21T07:27:28Z",
+      "imageIds": [
+        "img_2c2d",
+        "img_5bc9",
+        "img_4150"
+      ]
+    },
+    {
+      "id": "lst_410514",
+      "sellerId": "sel_0008",
+      "title": "externe Festplatte 2TB",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 26300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12099",
+      "createdAt": "2026-04-03T03:33:54Z",
+      "publishedAt": "2026-04-04T10:14:52Z",
+      "imageIds": [
+        "img_4e97",
+        "img_6dd2"
+      ]
+    },
+    {
+      "id": "lst_b00687",
+      "sellerId": "sel_0022",
+      "title": "Vintage Radio Braun",
+      "description": "Abholung in Berlin, Versand gegen Aufpreis moeglich.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 65700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10247",
+      "createdAt": "2026-05-11T22:39:46Z",
+      "publishedAt": "2026-05-13T09:17:51Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_a21bc7",
+      "sellerId": "sel_0028",
+      "title": "Blitzgeraet Speedlite 430EX",
+      "description": "",
+      "categoryId": "elektronik.foto",
+      "priceCents": 145600,
+      "currency": "EUR",
+      "status": "paused",
+      "postcode": "10119",
+      "createdAt": "2026-07-15T08:35:14Z",
+      "publishedAt": "2026-07-16T09:48:33Z",
+      "imageIds": [
+        "img_a3a4",
+        "img_61bf"
+      ]
+    },
+    {
+      "id": "lst_075637",
+      "sellerId": "sel_0007",
+      "title": "Vitrine Antik",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 83800,
+      "currency": "EUR",
+      "status": "deleted",
+      "postcode": "10247",
+      "createdAt": "2025-11-25T23:20:57Z",
+      "publishedAt": "2025-11-29T03:19:56Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_200ab1",
+      "sellerId": "sel_0008",
+      "title": "Messerset Zwilling",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 174200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10119",
+      "createdAt": "2026-02-05T22:43:23Z",
+      "publishedAt": "2026-02-10T01:24:46Z",
+      "imageIds": [
+        "img_92c8",
+        "img_de87"
+      ]
+    },
+    {
+      "id": "lst_7831b0",
+      "sellerId": "sel_0011",
+      "title": "Kinderbuecher Paket",
+      "description": "",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 37700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12047",
+      "createdAt": "2026-06-26T09:14:10Z",
+      "publishedAt": "2026-06-26T15:24:57Z",
+      "imageIds": [
+        "img_aad3",
+        "img_df48",
+        "img_349f",
+        "img_d196"
+      ]
+    },
+    {
+      "id": "lst_d6b05e",
+      "sellerId": "sel_0018",
+      "title": "Standlautsprecher Set Kenwood",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 173100,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12099",
+      "createdAt": "2026-05-16T13:07:14Z",
+      "publishedAt": "2026-05-20T19:48:31Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_1bbe01",
+      "sellerId": "sel_0007",
+      "title": "Spiegelreflexkamera Nikon D3300",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 140800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10553",
+      "createdAt": "2025-12-30T16:10:04Z",
+      "publishedAt": "2026-01-03T09:39:06Z",
+      "imageIds": [
+        "img_ba26",
+        "img_1d36"
+      ]
+    },
+    {
+      "id": "lst_755dd7",
+      "sellerId": "sel_0040",
+      "title": "CD-Player Marantz",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 41300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12099",
+      "createdAt": "2026-06-14T00:27:45Z",
+      "publishedAt": "2026-06-15T16:26:59Z",
+      "imageIds": [
+        "img_6b0a"
+      ]
+    },
+    {
+      "id": "lst_039a19",
+      "sellerId": "sel_0025",
+      "title": "Kompaktkamera Sony Cybershot",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 27500,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12047",
+      "createdAt": "2026-07-08T15:15:25Z",
+      "publishedAt": "2026-07-10T15:44:44Z",
+      "imageIds": [
+        "img_af35",
+        "img_ca86",
+        "img_7d2b",
+        "img_f505"
+      ]
+    },
+    {
+      "id": "lst_a23ec6",
+      "sellerId": "sel_0011",
+      "title": "WLAN Router Fritzbox 7590",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 27500,
+      "currency": "EUR",
+      "status": "draft",
+      "postcode": "10999",
+      "createdAt": "2026-08-16T10:43:27Z",
+      "publishedAt": null,
+      "imageIds": [
+        "img_86ed",
+        "img_9911",
+        "img_dd36",
+        "img_9713"
+      ]
+    },
+    {
+      "id": "lst_98c503",
+      "sellerId": "sel_0032",
+      "title": "Fahrradanhaenger fuer Kinder",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 128500,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2025-11-12T20:57:17Z",
+      "publishedAt": "2025-11-14T05:14:54Z",
+      "imageIds": [
+        "img_0c80"
+      ]
+    },
+    {
+      "id": "lst_4f63ea",
+      "sellerId": "sel_0019",
+      "title": "Rennradschuhe Shimano",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 194100,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10999",
+      "createdAt": "2025-12-17T07:30:09Z",
+      "publishedAt": "2025-12-21T11:48:15Z",
+      "imageIds": [
+        "img_1855"
+      ]
+    },
+    {
+      "id": "lst_056f95",
+      "sellerId": "sel_0038",
+      "title": "Wasserkocher Gastroback",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 80900,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10999",
+      "createdAt": "2026-04-11T13:21:09Z",
+      "publishedAt": "2026-04-16T03:05:37Z",
+      "imageIds": [
+        "img_444c",
+        "img_bce3",
+        "img_be2d"
+      ]
+    },
+    {
+      "id": "lst_d853f0",
+      "sellerId": "sel_0008",
+      "title": "Fahrradtaschen Set",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 189400,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10247",
+      "createdAt": "2025-11-29T05:34:47Z",
+      "publishedAt": "2025-11-30T04:51:35Z",
+      "imageIds": [
+        "img_2887",
+        "img_2c57",
+        "img_e1ce",
+        "img_a36d"
+      ]
+    },
+    {
+      "id": "lst_68d3fa",
+      "sellerId": "sel_0009",
+      "title": "Trekkingrad Herren 28 Zoll",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 201400,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2026-01-02T05:22:11Z",
+      "publishedAt": "2026-01-02T19:01:30Z",
+      "imageIds": [
+        "img_5542"
+      ]
+    },
+    {
+      "id": "lst_770cbe",
+      "sellerId": "sel_0040",
+      "title": "Fantasy Roman Trilogie",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 216500,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13158",
+      "createdAt": "2026-03-10T22:02:57Z",
+      "publishedAt": "2026-03-11T14:01:47Z",
+      "imageIds": [
+        "img_495c"
+      ]
+    },
+    {
+      "id": "lst_c63b1d",
+      "sellerId": "sel_0028",
+      "title": "Webcam Logitech C920",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 197200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2025-11-28T18:32:56Z",
+      "publishedAt": "2025-12-01T19:48:00Z",
+      "imageIds": [
+        "img_bde5",
+        "img_5da2",
+        "img_96a1",
+        "img_7ed0"
+      ]
+    },
+    {
+      "id": "lst_72ead4",
+      "sellerId": "sel_0009",
+      "title": "Vertikutierer",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 124500,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10967",
+      "createdAt": "2026-01-27T10:30:50Z",
+      "publishedAt": "2026-01-28T02:27:24Z",
+      "imageIds": [
+        "img_b75e",
+        "img_9e55",
+        "img_2cc9"
+      ]
+    },
+    {
+      "id": "lst_cd785d",
+      "sellerId": "sel_0019",
+      "title": "Fotorucksack Lowepro",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 76500,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2026-02-26T08:12:04Z",
+      "publishedAt": "2026-02-28T05:32:36Z",
+      "imageIds": [
+        "img_786a",
+        "img_85bd",
+        "img_b811"
+      ]
+    },
+    {
+      "id": "lst_66b3ba",
+      "sellerId": "sel_0026",
+      "title": "Backofen Einbaugeraet",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 137700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10777",
+      "createdAt": "2026-08-22T20:43:10Z",
+      "publishedAt": "2026-08-27T16:32:35Z",
+      "imageIds": [
+        "img_1eec",
+        "img_abf4"
+      ]
+    },
+    {
+      "id": "lst_10c673",
+      "sellerId": "sel_0003",
+      "title": "Objektiv Canon 50mm 1.8",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 138900,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10967",
+      "createdAt": "2026-05-16T14:54:41Z",
+      "publishedAt": "2026-05-16T16:04:52Z",
+      "imageIds": [
+        "img_c685",
+        "img_dd47",
+        "img_2f02",
+        "img_803d"
+      ]
+    },
+    {
+      "id": "lst_4a2da4",
+      "sellerId": "sel_0026",
+      "title": "Mikrofon Shure SM58",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 61800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2025-12-06T13:22:23Z",
+      "publishedAt": "2025-12-09T07:12:42Z",
+      "imageIds": [
+        "img_715b",
+        "img_263e",
+        "img_cce5",
+        "img_a42a"
+      ]
+    },
+    {
+      "id": "lst_8a1320",
+      "sellerId": "sel_0016",
+      "title": "Kunstbildband",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 245100,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10553",
+      "createdAt": "2026-02-19T21:38:14Z",
+      "publishedAt": "2026-02-23T07:31:32Z",
+      "imageIds": [
+        "img_efb7"
+      ]
+    },
+    {
+      "id": "lst_bcbda1",
+      "sellerId": "sel_0002",
+      "title": "Sachbuecher Wirtschaft Paket",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 60200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2025-12-22T05:27:52Z",
+      "publishedAt": "2025-12-22T09:00:11Z",
+      "imageIds": [
+        "img_8e2c",
+        "img_bd61",
+        "img_da01",
+        "img_1cd9"
+      ]
+    },
+    {
+      "id": "lst_8948b9",
+      "sellerId": "sel_0003",
+      "title": "Ultrabook Dell XPS 13",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 249200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13086",
+      "createdAt": "2026-07-28T16:55:45Z",
+      "publishedAt": "2026-07-30T17:07:58Z",
+      "imageIds": [
+        "img_24c6",
+        "img_e9de",
+        "img_201c"
+      ]
+    },
+    {
+      "id": "lst_64254c",
+      "sellerId": "sel_0027",
+      "title": "DJ Mixer Pioneer DDJ",
+      "description": "Abholung in Berlin, Versand gegen Aufpreis moeglich.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 5200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2026-05-17T09:51:57Z",
+      "publishedAt": "2026-05-22T09:19:03Z",
+      "imageIds": [
+        "img_54ee",
+        "img_35b6"
+      ]
+    },
+    {
+      "id": "lst_15820f",
+      "sellerId": "sel_0024",
+      "title": "Kopfhoerer AKG K240",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 72800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10777",
+      "createdAt": "2026-04-02T03:34:04Z",
+      "publishedAt": "2026-04-02T13:14:53Z",
+      "imageIds": [
+        "img_befa"
+      ]
+    },
+    {
+      "id": "lst_484212",
+      "sellerId": "sel_0033",
+      "title": "Gartenzaun Elemente",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 64200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12459",
+      "createdAt": "2026-01-15T04:34:45Z",
+      "publishedAt": "2026-01-15T13:52:56Z",
+      "imageIds": [
+        "img_3f8b",
+        "img_d40e",
+        "img_56ae"
+      ]
+    },
+    {
+      "id": "lst_750223",
+      "sellerId": "sel_0024",
+      "title": "Mikrowelle Panasonic",
+      "description": "",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 242700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10777",
+      "createdAt": "2025-11-16T06:44:42Z",
+      "publishedAt": "2025-11-17T18:21:44Z",
+      "imageIds": [
+        "img_fe24",
+        "img_ce8d"
+      ]
+    },
+    {
+      "id": "lst_d4836a",
+      "sellerId": "sel_0036",
+      "title": "Soundbar Bose",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 196200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2026-04-27T04:57:34Z",
+      "publishedAt": "2026-04-29T17:38:08Z",
+      "imageIds": [
+        "img_f0a4",
+        "img_3660",
+        "img_51ab"
+      ]
+    },
+    {
+      "id": "lst_37e25b",
+      "sellerId": "sel_0002",
+      "title": "Plattenspieler Technics gebraucht",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 141000,
+      "currency": "EUR",
+      "status": "paused",
+      "postcode": "10119",
+      "createdAt": "2025-11-01T16:24:55Z",
+      "publishedAt": "2025-11-02T03:24:16Z",
+      "imageIds": [
+        "img_7108",
+        "img_d917"
+      ]
+    },
+    {
+      "id": "lst_039e3b",
+      "sellerId": "sel_0013",
+      "title": "Tablet Samsung Galaxy Tab",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 202900,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12099",
+      "createdAt": "2026-04-26T15:27:50Z",
+      "publishedAt": "2026-04-27T02:31:07Z",
+      "imageIds": [
+        "img_9d07"
+      ]
+    },
+    {
+      "id": "lst_b1d1c0",
+      "sellerId": "sel_0033",
+      "title": "Diascanner Reflecta",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 99200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12099",
+      "createdAt": "2026-04-21T04:52:31Z",
+      "publishedAt": "2026-04-23T13:13:42Z",
+      "imageIds": [
+        "img_2b4c"
+      ]
+    },
+    {
+      "id": "lst_88977e",
+      "sellerId": "sel_0020",
+      "title": "Mainboard ASUS ATX",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 37200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12099",
+      "createdAt": "2025-12-09T07:04:20Z",
+      "publishedAt": "2025-12-09T19:25:31Z",
+      "imageIds": [
+        "img_8866",
+        "img_1e27",
+        "img_f911"
+      ]
+    },
+    {
+      "id": "lst_42be2a",
+      "sellerId": "sel_0009",
+      "title": "Espressomaschine Siebtraeger",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 125700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10405",
+      "createdAt": "2026-06-20T10:22:41Z",
+      "publishedAt": "2026-06-20T22:30:33Z",
+      "imageIds": [
+        "img_712a"
+      ]
+    },
+    {
+      "id": "lst_f6f763",
+      "sellerId": "sel_0030",
+      "title": "Hocker Set 3-teilig",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 121600,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2026-08-15T20:52:03Z",
+      "publishedAt": "2026-08-20T01:28:13Z",
+      "imageIds": [
+        "img_d460"
+      ]
+    },
+    {
+      "id": "lst_744011",
+      "sellerId": "sel_0010",
+      "title": "Comic Sammlung",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 215500,
+      "currency": "EUR",
+      "status": "expired",
+      "postcode": "10553",
+      "createdAt": "2026-02-03T12:25:09Z",
+      "publishedAt": "2026-02-07T10:23:50Z",
+      "imageIds": [
+        "img_6299",
+        "img_3a23",
+        "img_3f98"
+      ]
+    },
+    {
+      "id": "lst_ca5beb",
+      "sellerId": "sel_0016",
+      "title": "Kuehlschrank Miele",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 69100,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10119",
+      "createdAt": "2025-11-30T08:58:07Z",
+      "publishedAt": "2025-11-30T18:22:39Z",
+      "imageIds": [
+        "img_1267",
+        "img_67f4",
+        "img_64ff",
+        "img_d6cc"
+      ]
+    },
+    {
+      "id": "lst_76ae33",
+      "sellerId": "sel_0035",
+      "title": "Ratgeber Gartenarbeit",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 5800,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10967",
+      "createdAt": "2026-05-04T10:32:57Z",
+      "publishedAt": "2026-05-06T11:52:35Z",
+      "imageIds": [
+        "img_17a8",
+        "img_d2c8"
+      ]
+    },
+    {
+      "id": "lst_2c3a08",
+      "sellerId": "sel_0014",
+      "title": "Laufrad Kinder",
+      "description": "Kleine Gebrauchsspuren, sonst top.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 95300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10967",
+      "createdAt": "2025-11-30T18:01:31Z",
+      "publishedAt": "2025-12-02T00:23:24Z",
+      "imageIds": [
+        "img_fa66",
+        "img_820b",
+        "img_fe4c"
+      ]
+    },
+    {
+      "id": "lst_db6fac",
+      "sellerId": "sel_0021",
+      "title": "Aktivboxen Yamaha HS5",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 235700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13355",
+      "createdAt": "2026-01-05T07:52:20Z",
+      "publishedAt": "2026-01-05T12:39:52Z",
+      "imageIds": [
+        "img_13f7"
+      ]
+    },
+    {
+      "id": "lst_70a449",
+      "sellerId": "sel_0003",
+      "title": "Actioncam GoPro Hero 7",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 240300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10115",
+      "createdAt": "2026-06-25T04:55:20Z",
+      "publishedAt": "2026-06-28T08:45:48Z",
+      "imageIds": [
+        "img_2fa7"
+      ]
+    },
+    {
+      "id": "lst_c16ea3",
+      "sellerId": "sel_0001",
+      "title": "Biografien Paket",
+      "description": "Neupreis deutlich hoeher, Verhandlungsbasis.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 87600,
+      "currency": "EUR",
+      "status": "expired",
+      "postcode": "12459",
+      "createdAt": "2026-02-02T21:42:19Z",
+      "publishedAt": "2026-02-06T11:08:42Z",
+      "imageIds": [
+        "img_8294",
+        "img_6381",
+        "img_5908",
+        "img_8227"
+      ]
+    },
+    {
+      "id": "lst_aa96f9",
+      "sellerId": "sel_0020",
+      "title": "Stativkopf Kugelkopf",
+      "description": "Nur Abholung, kein Versand moeglich.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 99700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10777",
+      "createdAt": "2025-11-30T03:32:00Z",
+      "publishedAt": "2025-12-03T17:43:11Z",
+      "imageIds": [
+        "img_c02b"
+      ]
+    },
+    {
+      "id": "lst_31d43c",
+      "sellerId": "sel_0022",
+      "title": "Kassettendeck Nakamichi",
+      "description": "Abholung in Berlin, Versand gegen Aufpreis moeglich.",
+      "categoryId": "elektronik.audio",
+      "priceCents": 122100,
+      "currency": "EUR",
+      "status": "draft",
+      "postcode": "12099",
+      "createdAt": "2025-11-24T13:08:45Z",
+      "publishedAt": null,
+      "imageIds": [
+        "img_338a",
+        "img_9fcb",
+        "img_cc57"
+      ]
+    },
+    {
+      "id": "lst_edd3f2",
+      "sellerId": "sel_0034",
+      "title": "Regalsystem String",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 183900,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2026-08-08T14:15:37Z",
+      "publishedAt": "2026-08-12T17:04:15Z",
+      "imageIds": [
+        "img_1e6b",
+        "img_6e81",
+        "img_ab21"
+      ]
+    },
+    {
+      "id": "lst_1ed200",
+      "sellerId": "sel_0023",
+      "title": "Lyrikband",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 103000,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10437",
+      "createdAt": "2026-05-15T18:07:49Z",
+      "publishedAt": "2026-05-17T13:35:26Z",
+      "imageIds": [
+        "img_48cf",
+        "img_1bee",
+        "img_5e3c",
+        "img_73ab"
+      ]
+    },
+    {
+      "id": "lst_33eb86",
+      "sellerId": "sel_0021",
+      "title": "Schulbuecher Gymnasium",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "freizeit.buecher",
+      "priceCents": 48300,
+      "currency": "EUR",
+      "status": "deleted",
+      "postcode": "10967",
+      "createdAt": "2026-03-30T10:14:44Z",
+      "publishedAt": "2026-04-04T09:34:13Z",
+      "imageIds": [
+        "img_3e50",
+        "img_9357",
+        "img_cf50"
+      ]
+    },
+    {
+      "id": "lst_64011a",
+      "sellerId": "sel_0039",
+      "title": "Fahrradcomputer Garmin",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 149500,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10247",
+      "createdAt": "2026-02-13T10:00:55Z",
+      "publishedAt": "2026-02-15T15:09:04Z",
+      "imageIds": [
+        "img_bf83",
+        "img_9dc9",
+        "img_9b4e"
+      ]
+    },
+    {
+      "id": "lst_691f05",
+      "sellerId": "sel_0004",
+      "title": "Servierplatten Porzellan Set",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 157200,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10115",
+      "createdAt": "2026-04-11T23:47:17Z",
+      "publishedAt": "2026-04-13T00:17:06Z",
+      "imageIds": [
+        "img_9a2f",
+        "img_8d9b",
+        "img_5781"
+      ]
+    },
+    {
+      "id": "lst_e759f4",
+      "sellerId": "sel_0037",
+      "title": "Poolpumpe",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "haushalt.garten",
+      "priceCents": 18200,
+      "currency": "EUR",
+      "status": "draft",
+      "postcode": "13086",
+      "createdAt": "2026-01-07T06:47:27Z",
+      "publishedAt": null,
+      "imageIds": [
+        "img_d48d"
+      ]
+    },
+    {
+      "id": "lst_52fe47",
+      "sellerId": "sel_0031",
+      "title": "Fotolampe Studioset",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 219400,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10999",
+      "createdAt": "2026-03-17T14:28:51Z",
+      "publishedAt": "2026-03-17T19:56:18Z",
+      "imageIds": []
+    },
+    {
+      "id": "lst_765f9c",
+      "sellerId": "sel_0024",
+      "title": "Klapprad Brompton",
+      "description": "Funktioniert einwandfrei, aus Nichtraucherhaushalt.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 153600,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12459",
+      "createdAt": "2026-03-08T11:19:56Z",
+      "publishedAt": "2026-03-10T21:33:58Z",
+      "imageIds": [
+        "img_b207"
+      ]
+    },
+    {
+      "id": "lst_888ca2",
+      "sellerId": "sel_0015",
+      "title": "Fahrradschloss Kryptonite",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "freizeit.fahrraeder",
+      "priceCents": 127700,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10777",
+      "createdAt": "2026-06-22T17:35:55Z",
+      "publishedAt": "2026-06-24T18:07:07Z",
+      "imageIds": [
+        "img_7050",
+        "img_45f3"
+      ]
+    },
+    {
+      "id": "lst_e8cb76",
+      "sellerId": "sel_0039",
+      "title": "TV-Board Eiche",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "haushalt.moebel",
+      "priceCents": 184300,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10405",
+      "createdAt": "2026-06-11T06:30:51Z",
+      "publishedAt": "2026-06-15T05:19:31Z",
+      "imageIds": [
+        "img_b035",
+        "img_a3f0",
+        "img_40a0"
+      ]
+    },
+    {
+      "id": "lst_dd2d42",
+      "sellerId": "sel_0007",
+      "title": "Entsafter Philips",
+      "description": "Wenig genutzt, siehe Fotos.",
+      "categoryId": "haushalt.kueche",
+      "priceCents": 14000,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "12459",
+      "createdAt": "2025-12-01T06:50:01Z",
+      "publishedAt": "2025-12-02T01:25:15Z",
+      "imageIds": [
+        "img_c9d3"
+      ]
+    },
+    {
+      "id": "lst_567d5e",
+      "sellerId": "sel_0017",
+      "title": "Analogkamera Praktica",
+      "description": "Originalverpackung vorhanden.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 148400,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "13158",
+      "createdAt": "2026-07-07T23:29:33Z",
+      "publishedAt": "2026-07-12T18:27:22Z",
+      "imageIds": [
+        "img_da21",
+        "img_2c1a",
+        "img_7a33",
+        "img_c36f"
+      ]
+    },
+    {
+      "id": "lst_148a78",
+      "sellerId": "sel_0006",
+      "title": "Objektivfilter Set 77mm",
+      "description": "Gepflegter Zustand, keine Maengel.",
+      "categoryId": "elektronik.foto",
+      "priceCents": 119000,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10119",
+      "createdAt": "2026-06-10T00:54:05Z",
+      "publishedAt": "2026-06-13T19:45:55Z",
+      "imageIds": [
+        "img_036d"
+      ]
+    },
+    {
+      "id": "lst_df0e69",
+      "sellerId": "sel_0030",
+      "title": "USB-C Dockingstation",
+      "description": "",
+      "categoryId": "elektronik.computer",
+      "priceCents": 121100,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10999",
+      "createdAt": "2026-05-03T09:27:36Z",
+      "publishedAt": "2026-05-05T03:55:36Z",
+      "imageIds": [
+        "img_e7d5",
+        "img_c0c8",
+        "img_f141"
+      ]
+    },
+    {
+      "id": "lst_cfb82c",
+      "sellerId": "sel_0017",
+      "title": "Netzwerkswitch 8 Port",
+      "description": "Bei Fragen einfach melden.",
+      "categoryId": "elektronik.computer",
+      "priceCents": 124400,
+      "currency": "EUR",
+      "status": "published",
+      "postcode": "10777",
+      "createdAt": "2025-12-18T11:51:39Z",
+      "publishedAt": "2025-12-18T22:04:08Z",
+      "imageIds": [
+        "img_1a25",
+        "img_72cc",
+        "img_6cdf"
+      ]
+    }
+  ],
+  "savedSearches": [
+    {
+      "id": "ss_2707c3",
+      "sellerId": "sel_0022",
+      "label": "Plattenspieler bis 300",
+      "query": "plattenspieler",
+      "filters": {
+        "categoryId": "freizeit.buecher",
+        "priceMinCents": 4100,
+        "postcode": "12459",
+        "radiusKm": 3
+      },
+      "notify": false,
+      "lastMatchedAt": null
+    },
+    {
+      "id": "ss_b969a7",
+      "sellerId": "sel_0030",
+      "label": "Kostenlose Moebel Neukoelln",
+      "query": "",
+      "filters": {
+        "categoryId": "haushalt.moebel",
+        "priceMaxCents": 83900,
+        "postcode": "10553",
+        "radiusKm": 21
+      },
+      "notify": false,
+      "lastMatchedAt": "2026-07-23T09:35:52Z"
+    },
+    {
+      "id": "ss_a22070",
+      "sellerId": "sel_0010",
+      "label": "Laptop guenstig",
+      "query": "laptop",
+      "filters": {
+        "priceMinCents": 1800
+      },
+      "notify": false,
+      "lastMatchedAt": "2026-07-14T23:08:34Z"
+    },
+    {
+      "id": "ss_f926cb",
+      "sellerId": "sel_0009",
+      "label": "Fahrrad Groesse M",
+      "query": "fahrrad",
+      "filters": {
+        "categoryId": "elektronik.computer",
+        "postcode": "10405",
+        "radiusKm": 3
+      },
+      "notify": false,
+      "lastMatchedAt": "2026-07-22T23:49:15Z"
+    },
+    {
+      "id": "ss_be2c11",
+      "sellerId": "sel_0017",
+      "label": "Kuechengeraete Friedrichshain",
+      "query": "kuechenmaschine",
+      "filters": {
+        "categoryId": "haushalt.kueche",
+        "priceMinCents": 1300,
+        "priceMaxCents": 91800
+      },
+      "notify": true,
+      "lastMatchedAt": null
+    },
+    {
+      "id": "ss_4b9008",
+      "sellerId": "sel_0008",
+      "label": "Buecher Krimi",
+      "query": "krimi",
+      "filters": {
+        "categoryId": "elektronik.computer",
+        "postcode": "12047",
+        "radiusKm": 5
+      },
+      "notify": true,
+      "lastMatchedAt": null
+    },
+    {
+      "id": "ss_ce2d1d",
+      "sellerId": "sel_0021",
+      "label": "Kamera Vollformat",
+      "query": "kamera",
+      "filters": {
+        "categoryId": "freizeit.buecher",
+        "priceMaxCents": 297500
+      },
+      "notify": false,
+      "lastMatchedAt": "2026-07-13T03:38:11Z"
+    },
+    {
+      "id": "ss_cf0f25",
+      "sellerId": "sel_0027",
+      "label": "Gartenmoebel Set",
+      "query": "",
+      "filters": {
+        "categoryId": "elektronik.foto",
+        "priceMaxCents": 117000,
+        "postcode": "13355"
+      },
+      "notify": true,
+      "lastMatchedAt": "2026-08-29T08:46:55Z"
+    },
+    {
+      "id": "ss_221f19",
+      "sellerId": "sel_0028",
+      "label": "Sofa 3-Sitzer",
+      "query": "sofa",
+      "filters": {
+        "categoryId": "elektronik.computer",
+        "priceMaxCents": 280600,
+        "postcode": "10437"
+      },
+      "notify": false,
+      "lastMatchedAt": "2026-07-30T08:00:15Z"
+    },
+    {
+      "id": "ss_59059b",
+      "sellerId": "sel_0038",
+      "label": "E-Bike unter 800",
+      "query": "e-bike",
+      "filters": {
+        "categoryId": "freizeit.fahrraeder",
+        "priceMaxCents": 110300
+      },
+      "notify": false,
+      "lastMatchedAt": null
+    },
+    {
+      "id": "ss_996ef6",
+      "sellerId": "sel_0033",
+      "label": "Kopfhoerer kabellos",
+      "query": "kopfhoerer",
+      "filters": {
+        "categoryId": "elektronik.foto",
+        "priceMaxCents": 218000
+      },
+      "notify": true,
+      "lastMatchedAt": "2026-07-30T08:46:29Z"
+    },
+    {
+      "id": "ss_339708",
+      "sellerId": "sel_0014",
+      "label": "Grill fuer den Balkon",
+      "query": "grill",
+      "filters": {
+        "categoryId": "elektronik.audio",
+        "priceMaxCents": 211500,
+        "postcode": "10437",
+        "radiusKm": 21
+      },
+      "notify": true,
+      "lastMatchedAt": "2026-07-25T20:27:02Z"
+    }
+  ]
+}

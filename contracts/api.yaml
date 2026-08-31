@@ -1,0 +1,1343 @@
+openapi: 3.1.0
+
+info:
+  title: Kiezmarkt Listing Service
+  version: 0.1.0
+  summary: Listings and their lifecycle, search, categories, saved searches.
+  description: |
+    The listing service surface of Kiezmarkt, the synthetic neighbourhood
+    classifieds marketplace used as the guiding project of the AI-enablement
+    training.
+
+    The domain model behind this contract is `docs/project/domain.md`. Where the
+    two disagree, `domain.md` wins and this file is the defect. Two invariants
+    are carried by the schemas rather than by prose:
+
+    - Money is an integer number of cents. No property in this document is typed
+      `number`, at any depth.
+    - No response schema exposes a seller email. A seller is visible as
+      `sellerId`, and where a human-readable name is required, through the
+      `SellerPublic` projection.
+
+    `domain.md` specifies no authentication or authorization model. Endpoints
+    that are inherently caller-scoped (`/saved-searches`) say so in their
+    description; the mechanism is out of scope for this contract.
+
+servers:
+  - url: https://api.kiezmarkt.example/v1
+    description: Synthetic. Nothing is deployed behind this URL.
+
+tags:
+  - name: listings
+    description: Listing lifecycle and search.
+  - name: categories
+    description: The two-level category tree.
+  - name: sellers
+    description: The public projection of a seller. Never email.
+  - name: saved-searches
+    description: Stored queries and their notification flag.
+
+paths:
+
+  /listings:
+
+    get:
+      operationId: searchListings
+      tags: [listings]
+      summary: Search listings
+      description: |
+        Returns published listings only. A listing in `draft`, `paused`,
+        `expired` or `deleted` is never part of a search result, regardless of
+        filters (invariant 1 in `domain.md`).
+
+        Pagination is cursor-based. A caller passes `limit` and, from the second
+        page on, the `nextCursor` returned by the previous page. Cursors are
+        opaque; a client must not construct, parse or persist them beyond the
+        life of one result set.
+
+        `domain.md` leaves open whether ordering is stable across pages when
+        listings change status mid-pagination. This contract does not resolve
+        that question; it is deliberately unanswered.
+      parameters:
+        - name: q
+          in: query
+          description: Free-text query over `title` and `description`.
+          required: false
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 200
+        - name: categoryId
+          in: query
+          description: |
+            Restrict to one category. A top-level id widens the search to all of
+            its leaves; a leaf id matches exactly. Top-level categories never
+            carry listings themselves (invariant 4).
+          required: false
+          schema:
+            $ref: '#/components/schemas/CategoryId'
+        - name: priceMinCents
+          in: query
+          description: Inclusive lower bound, in integer cents.
+          required: false
+          schema:
+            $ref: '#/components/schemas/MoneyCents'
+        - name: priceMaxCents
+          in: query
+          description: Inclusive upper bound, in integer cents.
+          required: false
+          schema:
+            $ref: '#/components/schemas/MoneyCents'
+        - name: postcode
+          in: query
+          description: Centre of the geographic filter.
+          required: false
+          schema:
+            $ref: '#/components/schemas/Postcode'
+        - name: radiusKm
+          in: query
+          description: |
+            Radius around `postcode`, in kilometres. Requires `postcode`; sent
+            alone it is a `400` with problem type `radius-without-postcode`.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+        - name: cursor
+          in: query
+          description: Opaque cursor from the previous page's `nextCursor`.
+          required: false
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Page size.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+      responses:
+        '200':
+          description: A page of published listings.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListingPage'
+              examples:
+                firstPage:
+                  summary: First page, two of 120 seeded listings
+                  value:
+                    items:
+                      - id: lst_9f2c41
+                        sellerId: sel_0142
+                        title: Technics SL-1210 MK2 Plattenspieler
+                        description: Gewartet, neue Nadel, Originalhaube vorhanden.
+                        categoryId: elektronik.audio
+                        priceCents: 42000
+                        currency: EUR
+                        status: published
+                        postcode: '10437'
+                        createdAt: '2026-08-11T07:41:12Z'
+                        publishedAt: '2026-08-11T08:02:55Z'
+                        imageIds: [img_3a1f, img_3a20, img_3a21]
+                      - id: lst_20b7e3
+                        sellerId: sel_0007
+                        title: Umzugskartons, 12 Stueck
+                        description: Zu verschenken, nur Abholung Neukoelln.
+                        categoryId: haushalt.moebel
+                        # `priceCents: 0`. `domain.md` records that both readings of 0 exist in
+                        # the data (free vs. unpriced) and does not decide between them.
+                        priceCents: 0
+                        currency: EUR
+                        status: published
+                        postcode: '12047'
+                        createdAt: '2026-08-14T16:20:03Z'
+                        publishedAt: '2026-08-14T16:20:44Z'
+                        imageIds: [img_77c0]
+                    nextCursor: eyJvIjoyMCwidCI6IjIwMjYtMDgtMTQifQ
+                lastPage:
+                  summary: Last page, no further cursor
+                  value:
+                    items: []
+                    nextCursor: null
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+    post:
+      operationId: createListing
+      tags: [listings]
+      summary: Create a listing
+      description: |
+        A created listing always starts in `status: draft` with
+        `publishedAt: null`. The request body carries neither field; a body that
+        does is rejected with `400`. Publishing is a separate call to
+        `POST /listings/{id}/status`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListingCreate'
+            examples:
+              minimal:
+                summary: Only the required fields
+                value:
+                  sellerId: sel_0142
+                  title: Bierkiste Sitzbank, selbst gebaut
+                  categoryId: haushalt.moebel
+                  priceCents: 2500
+                  postcode: '10119'
+      responses:
+        '201':
+          description: Created. The listing is a draft.
+          headers:
+            Location:
+              description: URI of the created listing.
+              schema:
+                type: string
+                format: uri-reference
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Listing'
+              examples:
+                created:
+                  value:
+                    id: lst_c40a19
+                    sellerId: sel_0142
+                    title: Bierkiste Sitzbank, selbst gebaut
+                    description: ''
+                    categoryId: haushalt.moebel
+                    priceCents: 2500
+                    currency: EUR
+                    status: draft
+                    postcode: '10119'
+                    createdAt: '2026-08-31T09:14:00Z'
+                    publishedAt: null
+                    imageIds: []
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+
+  /listings/{id}:
+
+    parameters:
+      - $ref: '#/components/parameters/ListingId'
+
+    get:
+      operationId: getListing
+      tags: [listings]
+      summary: Read one listing
+      description: |
+        Returns a listing in any status except `deleted`, which is reported as
+        `410`. Unlike `GET /listings`, this endpoint is not restricted to
+        published listings: a seller reads their own draft here.
+      responses:
+        '200':
+          description: The listing.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Listing'
+              examples:
+                published:
+                  summary: Published listing with a price
+                  value:
+                    id: lst_9f2c41
+                    sellerId: sel_0142
+                    title: Technics SL-1210 MK2 Plattenspieler
+                    description: Gewartet, neue Nadel, Originalhaube vorhanden.
+                    categoryId: elektronik.audio
+                    priceCents: 42000
+                    currency: EUR
+                    status: published
+                    postcode: '10437'
+                    createdAt: '2026-08-11T07:41:12Z'
+                    publishedAt: '2026-08-11T08:02:55Z'
+                    imageIds: [img_3a1f, img_3a20, img_3a21]
+                freeItem:
+                  summary: Published listing at zero cents
+                  value:
+                    id: lst_20b7e3
+                    sellerId: sel_0007
+                    title: Umzugskartons, 12 Stueck
+                    description: Zu verschenken, nur Abholung Neukoelln.
+                    categoryId: haushalt.moebel
+                    priceCents: 0
+                    currency: EUR
+                    status: published
+                    postcode: '12047'
+                    createdAt: '2026-08-14T16:20:03Z'
+                    publishedAt: '2026-08-14T16:20:44Z'
+                    imageIds: [img_77c0]
+                # The example below does NOT validate against `Listing`. It is
+                # reality, not the contract: 7 of the 120 seeded listings arrive
+                # from the import feed with `priceCents: null` and are served
+                # unchanged. Kept here on purpose so the gap between the declared
+                # schema and the payload is visible in the contract itself. Do not
+                # relax the schema to make it validate.
+                unpricedFromFeed:
+                  summary: Feed-imported listing with no price (schema-violating, real)
+                  value:
+                    id: lst_5e8802
+                    sellerId: sel_0031
+                    title: Sofa 3-Sitzer, nur Abholung
+                    description: Zu verschenken. Kleiner Riss an der Armlehne.
+                    categoryId: haushalt.moebel
+                    priceCents: null
+                    currency: EUR
+                    status: published
+                    postcode: '13355'
+                    createdAt: '2026-07-29T11:03:41Z'
+                    publishedAt: '2026-07-29T11:03:41Z'
+                    imageIds: [img_91aa, img_91ab]
+                draft:
+                  summary: Draft, never published
+                  value:
+                    id: lst_c40a19
+                    sellerId: sel_0142
+                    title: Bierkiste Sitzbank, selbst gebaut
+                    description: ''
+                    categoryId: haushalt.moebel
+                    priceCents: 2500
+                    currency: EUR
+                    status: draft
+                    postcode: '10119'
+                    createdAt: '2026-08-31T09:14:00Z'
+                    publishedAt: null
+                    imageIds: []
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '410':
+          $ref: '#/components/responses/Gone'
+
+    patch:
+      operationId: updateListing
+      tags: [listings]
+      summary: Partially update a listing
+      description: |
+        Absent properties are left unchanged. No patchable property is nullable,
+        so an explicit `null` is a `400` rather than a clear.
+
+        `status` is not patchable here. It moves only through
+        `POST /listings/{id}/status`, so that every transition passes one guard
+        and emits one event. `id`, `sellerId`, `createdAt` and `publishedAt` are
+        server-owned and rejected in a patch body.
+
+        A `deleted` listing is not patchable (`409`, `terminal-status`).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListingPatch'
+            examples:
+              priceCorrection:
+                summary: Correct a price
+                value:
+                  priceCents: 38000
+              reorderImages:
+                summary: Promote a different cover image
+                value:
+                  imageIds: [img_3a20, img_3a1f, img_3a21]
+      responses:
+        '200':
+          description: The updated listing.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Listing'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+
+  /listings/{id}/status:
+
+    parameters:
+      - $ref: '#/components/parameters/ListingId'
+
+    post:
+      operationId: changeListingStatus
+      tags: [listings]
+      summary: Transition a listing to another status
+      description: |
+        The body carries the target status. The service either applies the
+        transition and returns the listing, or rejects it with `409` and problem
+        type `illegal-status-transition`.
+
+        Legal transitions:
+
+        | From | To |
+        | :--- | :--- |
+        | `draft` | `published`, `deleted` |
+        | `published` | `paused`, `expired`, `deleted` |
+        | `paused` | `published`, `expired`, `deleted` |
+        | `expired` | `published`, `deleted` |
+        | `deleted` | nothing. `deleted` is terminal (invariant 5) |
+
+        Everything not in that table is illegal, including `draft` to `paused`,
+        `draft` to `expired`, and any transition out of `deleted`. A transition
+        to the status a listing already holds is also a `409`
+        (`illegal-status-transition`), not a silent success, so that a caller
+        cannot mistake a no-op for a state change.
+
+        `publishedAt` is set on the first transition into `published` and never
+        written again (invariant 2). A later `paused` to `published` leaves the
+        original `publishedAt` in place.
+
+        Every accepted transition is recorded in the service's status history.
+        Rejected ones record nothing. Status changes are not published as
+        events; see `docs/project/contracts/events.md`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatusChangeRequest'
+            examples:
+              publish:
+                summary: Publish a draft
+                value:
+                  status: published
+                  reason: seller-action
+              expire:
+                summary: Expire a published listing
+                value:
+                  status: expired
+                  reason: ttl-reached
+      responses:
+        '200':
+          description: Transition applied.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Listing'
+              examples:
+                published:
+                  summary: Draft published, `publishedAt` set
+                  value:
+                    id: lst_c40a19
+                    sellerId: sel_0142
+                    title: Bierkiste Sitzbank, selbst gebaut
+                    description: Robust, zwei Kisten, Sitzflaeche lackiert.
+                    categoryId: haushalt.moebel
+                    priceCents: 2500
+                    currency: EUR
+                    status: published
+                    postcode: '10119'
+                    createdAt: '2026-08-31T09:14:00Z'
+                    publishedAt: '2026-08-31T09:31:07Z'
+                    imageIds: [img_b110]
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          description: |
+            The transition is not legal from the listing's current status.
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+              examples:
+                illegalTransition:
+                  summary: "`draft` to `paused`"
+                  value:
+                    type: https://kiezmarkt.example/problems/illegal-status-transition
+                    title: Illegal status transition
+                    status: 409
+                    detail: Listing lst_c40a19 is in status draft; draft may only move to published or deleted.
+                terminal:
+                  summary: Anything out of `deleted`
+                  value:
+                    type: https://kiezmarkt.example/problems/illegal-status-transition
+                    title: Illegal status transition
+                    status: 409
+                    detail: Listing lst_5e8802 is deleted. deleted is terminal.
+
+  /categories:
+
+    get:
+      operationId: listCategories
+      tags: [categories]
+      summary: The category tree
+      description: |
+        The full tree, two levels deep. Top-level nodes carry `parentId: null`
+        and a `children` array; leaves carry a `parentId` and no `children`. Only
+        leaves carry listings (invariant 4).
+
+        Every category also carries `legacyId`, the pre-2024 numeric id. It is
+        still referenced in places. `domain.md` records that nobody has counted
+        where, which is why the field is exposed rather than dropped.
+      responses:
+        '200':
+          description: The tree.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CategoryTreeNode'
+              examples:
+                tree:
+                  summary: Three top-level categories, eight leaves
+                  value:
+                    - id: elektronik
+                      legacyId: 12
+                      parentId: null
+                      name: Elektronik
+                      children:
+                        - id: elektronik.audio
+                          legacyId: 1204
+                          parentId: elektronik
+                          name: Audio & HiFi
+                        - id: elektronik.foto
+                          legacyId: 1207
+                          parentId: elektronik
+                          name: Foto
+                        - id: elektronik.computer
+                          legacyId: 1211
+                          parentId: elektronik
+                          name: Computer
+                    - id: haushalt
+                      legacyId: 30
+                      parentId: null
+                      name: Haushalt & Wohnen
+                      children:
+                        - id: haushalt.moebel
+                          legacyId: 3002
+                          parentId: haushalt
+                          name: Moebel
+                        - id: haushalt.kueche
+                          legacyId: 3005
+                          parentId: haushalt
+                          name: Kueche
+                        - id: haushalt.garten
+                          legacyId: 3009
+                          parentId: haushalt
+                          name: Garten
+                    - id: freizeit
+                      legacyId: 51
+                      parentId: null
+                      name: Freizeit
+                      children:
+                        - id: freizeit.fahrraeder
+                          legacyId: 5103
+                          parentId: freizeit
+                          name: Fahrraeder
+                        - id: freizeit.buecher
+                          legacyId: 5108
+                          parentId: freizeit
+                          name: Buecher
+
+  /sellers/{id}:
+
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: Seller id, as carried by `Listing.sellerId`.
+        schema:
+          type: string
+          pattern: '^sel_[0-9a-f]{4,}$'
+        example: sel_0142
+
+    get:
+      operationId: getSeller
+      tags: [sellers]
+      summary: Read the public projection of a seller
+      description: |
+        A listing carries `sellerId` and nothing else about the seller, so any
+        surface that shows a name resolves it here. The response is the
+        `SellerPublic` projection and it is the only seller representation this
+        service serves.
+
+        `email` is not part of the projection and is not obtainable through this
+        API at all (`domain.md` invariant 6). It does not appear in a response,
+        in an event payload, or in the warehouse.
+      responses:
+        '200':
+          description: The seller.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SellerPublic'
+              examples:
+                private:
+                  summary: A private seller
+                  value:
+                    id: sel_0142
+                    displayName: Jonas K.
+                    isCommercial: false
+                commercial:
+                  summary: A commercial seller
+                  value:
+                    id: sel_0007
+                    displayName: Moebelhof Neukoelln
+                    isCommercial: true
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /saved-searches:
+
+    get:
+      operationId: listSavedSearches
+      tags: [saved-searches]
+      summary: The caller's saved searches
+      description: |
+        Scoped to the owning account. A caller never sees another account's
+        saved searches. `domain.md` defines no authentication model, so the
+        mechanism that establishes the caller is out of scope here; the scoping
+        rule is not.
+
+        There is no pagination. `domain.md` sets no upper bound on saved
+        searches per account; the seed set has 12 in total.
+      responses:
+        '200':
+          description: All saved searches owned by the caller.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SavedSearch'
+              examples:
+                two:
+                  value:
+                    - id: ss_4b1e07
+                      sellerId: sel_0142
+                      label: Plattenspieler bis 300
+                      query: plattenspieler
+                      filters:
+                        categoryId: elektronik.audio
+                        priceMinCents: 0
+                        priceMaxCents: 30000
+                        postcode: '10437'
+                        radiusKm: 10
+                      notify: true
+                      lastMatchedAt: '2026-08-28T06:12:19Z'
+                    - id: ss_88c210
+                      sellerId: sel_0142
+                      label: Kostenlose Moebel Neukoelln
+                      query: ''
+                      filters:
+                        categoryId: haushalt.moebel
+                        priceMinCents: 0
+                        priceMaxCents: 0
+                        postcode: '12047'
+                        radiusKm: 5
+                      notify: false
+                      lastMatchedAt: null
+
+    post:
+      operationId: createSavedSearch
+      tags: [saved-searches]
+      summary: Save a search
+      responses:
+        '201':
+          description: Created.
+          headers:
+            Location:
+              description: URI of the created saved search.
+              schema:
+                type: string
+                format: uri-reference
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SavedSearch'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SavedSearchCreate'
+            examples:
+              notifying:
+                summary: A search that notifies on new matches
+                value:
+                  label: Plattenspieler bis 300
+                  query: plattenspieler
+                  filters:
+                    categoryId: elektronik.audio
+                    priceMaxCents: 30000
+                    postcode: '10437'
+                    radiusKm: 10
+                  notify: true
+
+  /saved-searches/{id}:
+
+    parameters:
+      - $ref: '#/components/parameters/SavedSearchId'
+
+    patch:
+      operationId: updateSavedSearch
+      tags: [saved-searches]
+      summary: Partially update a saved search
+      description: |
+        Absent properties are left unchanged. `filters` is replaced as a whole,
+        not merged: sending `filters` with only `postcode` clears the other
+        filter fields. `id`, `sellerId` and `lastMatchedAt` are server-owned and
+        rejected in a patch body.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SavedSearchPatch'
+            examples:
+              rename:
+                summary: Rename
+                value:
+                  label: Plattenspieler, Prenzlauer Berg
+              muteNotifications:
+                summary: Stop notifying
+                value:
+                  notify: false
+      responses:
+        '200':
+          description: The updated saved search.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SavedSearch'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/UnprocessableEntity'
+
+    delete:
+      operationId: deleteSavedSearch
+      tags: [saved-searches]
+      summary: Delete a saved search
+      description: |
+        Hard delete. Unlike a listing, a saved search has no `deleted` status and
+        leaves no tombstone in the API. Deleting a search stops its
+        `savedsearch.matched` events from the next match evaluation on.
+      responses:
+        '204':
+          description: Deleted. No body.
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+components:
+
+  parameters:
+
+    ListingId:
+      name: id
+      in: path
+      required: true
+      description: Opaque, server-assigned listing id.
+      schema:
+        $ref: '#/components/schemas/ListingId'
+
+    SavedSearchId:
+      name: id
+      in: path
+      required: true
+      description: Opaque, server-assigned saved-search id.
+      schema:
+        $ref: '#/components/schemas/SavedSearchId'
+
+  responses:
+
+    BadRequest:
+      description: The request is malformed or violates a field constraint.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          examples:
+            titleTooShort:
+              value:
+                type: https://kiezmarkt.example/problems/validation-failed
+                title: Validation failed
+                status: 400
+                detail: title must be between 3 and 80 characters, got 2.
+            floatPrice:
+              summary: Money sent as a float
+              value:
+                type: https://kiezmarkt.example/problems/validation-failed
+                title: Validation failed
+                status: 400
+                detail: priceCents must be an integer number of cents, got 25.99.
+            radiusWithoutPostcode:
+              value:
+                type: https://kiezmarkt.example/problems/radius-without-postcode
+                title: Radius filter needs a postcode
+                status: 400
+                detail: radiusKm was supplied without postcode.
+            badCursor:
+              value:
+                type: https://kiezmarkt.example/problems/invalid-cursor
+                title: Invalid cursor
+                status: 400
+                detail: The cursor is malformed or no longer valid.
+
+    NotFound:
+      description: No such resource, or the caller may not see it.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          examples:
+            notFound:
+              value:
+                type: https://kiezmarkt.example/problems/not-found
+                title: Not found
+                status: 404
+                detail: No listing with id lst_000000.
+
+    Gone:
+      description: The listing exists but is `deleted`.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          examples:
+            gone:
+              value:
+                type: https://kiezmarkt.example/problems/listing-deleted
+                title: Listing deleted
+                status: 410
+                detail: Listing lst_5e8802 was deleted on 2026-08-20T10:02:11Z.
+
+    Conflict:
+      description: The request contradicts the resource's current state.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          examples:
+            terminalStatus:
+              value:
+                type: https://kiezmarkt.example/problems/terminal-status
+                title: Listing is deleted
+                status: 409
+                detail: Listing lst_5e8802 is deleted and cannot be modified.
+
+    UnprocessableEntity:
+      description: |
+        Syntactically valid, but rejected by a domain rule: an unknown
+        `categoryId`, a top-level `categoryId` on a listing (invariant 4), an
+        unknown `sellerId`.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+          examples:
+            parentCategory:
+              value:
+                type: https://kiezmarkt.example/problems/category-not-a-leaf
+                title: Category is not a leaf
+                status: 422
+                detail: elektronik has children and cannot carry listings directly.
+
+  schemas:
+
+    MoneyCents:
+      title: MoneyCents
+      description: |
+        An amount of money as an integer number of cents. Never a float, at any
+        layer (invariant 3 in `domain.md`). `currency` is carried separately.
+      type: integer
+      format: int64
+      minimum: 0
+      examples: [42000, 0, 2500]
+
+    Postcode:
+      title: Postcode
+      description: Five-digit German postcode. Leading zeros are significant, so this is a string.
+      type: string
+      pattern: '^[0-9]{5}$'
+      examples: ['10437', '12047', '13355']
+
+    Currency:
+      title: Currency
+      description: ISO 4217 code. Always `EUR` today.
+      type: string
+      pattern: '^[A-Z]{3}$'
+      default: EUR
+      examples: [EUR]
+
+    ListingId:
+      type: string
+      minLength: 1
+      maxLength: 64
+      examples: [lst_9f2c41]
+
+    SellerId:
+      type: string
+      minLength: 1
+      maxLength: 64
+      examples: [sel_0142]
+
+    SavedSearchId:
+      type: string
+      minLength: 1
+      maxLength: 64
+      examples: [ss_4b1e07]
+
+    CategoryId:
+      description: |
+        Current form, dot-separated, at most two levels: `elektronik`,
+        `elektronik.audio`. The pre-2024 numeric id is `legacyId` and is never
+        accepted here.
+      type: string
+      pattern: '^[a-z0-9]+(\.[a-z0-9]+)?$'
+      examples: [elektronik.audio, haushalt.moebel]
+
+    ImageId:
+      type: string
+      minLength: 1
+      maxLength: 64
+      examples: [img_3a1f]
+
+    ListingStatus:
+      title: ListingStatus
+      description: |
+        Lifecycle status. `deleted` is terminal. Only `published` is visible in
+        search. Legal transitions are documented on
+        `POST /listings/{id}/status`.
+      type: string
+      enum:
+        - draft
+        - published
+        - paused
+        - expired
+        - deleted
+
+    Listing:
+      title: Listing
+      description: |
+        A listing as served by the API. There is no seller email here and there
+        never will be (invariant 6); a seller is `sellerId`.
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - sellerId
+        - title
+        - description
+        - categoryId
+        - priceCents
+        - currency
+        - status
+        - postcode
+        - createdAt
+        - publishedAt
+        - imageIds
+      properties:
+        id:
+          allOf: [{ $ref: '#/components/schemas/ListingId' }]
+          description: Opaque, server-assigned.
+          readOnly: true
+        sellerId:
+          allOf: [{ $ref: '#/components/schemas/SellerId' }]
+          description: |
+            The owner. The only seller information in this schema. Any
+            human-readable name is resolved separately through `SellerPublic`.
+        title:
+          type: string
+          minLength: 3
+          maxLength: 80
+        description:
+          type: string
+          maxLength: 4000
+        categoryId:
+          allOf: [{ $ref: '#/components/schemas/CategoryId' }]
+          description: A leaf category. Top-level categories carry no listings.
+        # KNOWN LIE. Declared as a non-nullable integer here, and the import feed
+        # delivers `priceCents: null` for listings posted without a price
+        # ("Zu verschenken") - 7 of the 120 seeded listings. The schema is wrong and
+        # is left wrong on purpose: fixing the type is out of scope, handling the
+        # value is not. Any generated client that trusts this declaration will
+        # deserialize those seven rows into a crash or a silent zero. See the
+        # `unpricedFromFeed` example on `GET /listings/{id}`, and the corresponding
+        # note in `docs/project/domain.md` (Where the domain is deliberately silent).
+        priceCents:
+          allOf: [{ $ref: '#/components/schemas/MoneyCents' }]
+          description: |
+            Asking price in integer cents. `0` is a legal value and `domain.md`
+            records that it is ambiguous in the current data: some `0` rows mean
+            free, some mean unpriced. This contract does not disambiguate them.
+        currency:
+          $ref: '#/components/schemas/Currency'
+        status:
+          allOf: [{ $ref: '#/components/schemas/ListingStatus' }]
+          description: Changed only through `POST /listings/{id}/status`.
+          readOnly: true
+        postcode:
+          $ref: '#/components/schemas/Postcode'
+        createdAt:
+          type: string
+          format: date-time
+          description: UTC.
+          readOnly: true
+        publishedAt:
+          type: [string, 'null']
+          format: date-time
+          description: |
+            UTC. Null while the listing has never been published. Set exactly
+            once, on the first transition into `published` (invariant 2), and
+            never rewritten by a later republish.
+          readOnly: true
+        imageIds:
+          type: array
+          description: Ordered. The first entry is the cover image.
+          items:
+            $ref: '#/components/schemas/ImageId'
+          minItems: 0
+          maxItems: 20
+
+    ListingCreate:
+      title: ListingCreate
+      description: |
+        Body of `POST /listings`. `status` and `publishedAt` are absent by
+        design: a new listing is always a `draft` with `publishedAt: null`.
+      type: object
+      additionalProperties: false
+      required:
+        - sellerId
+        - title
+        - categoryId
+        - priceCents
+        - postcode
+      properties:
+        sellerId:
+          $ref: '#/components/schemas/SellerId'
+        title:
+          type: string
+          minLength: 3
+          maxLength: 80
+        description:
+          type: string
+          maxLength: 4000
+          default: ''
+        categoryId:
+          $ref: '#/components/schemas/CategoryId'
+        # Same known lie as `Listing.priceCents`: non-nullable here, null in the feed.
+        # Creates through this endpoint must send an integer; the feed does not use it.
+        priceCents:
+          $ref: '#/components/schemas/MoneyCents'
+        currency:
+          $ref: '#/components/schemas/Currency'
+        postcode:
+          $ref: '#/components/schemas/Postcode'
+        imageIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageId'
+          minItems: 0
+          maxItems: 20
+          default: []
+
+    ListingPatch:
+      title: ListingPatch
+      description: |
+        Body of `PATCH /listings/{id}`. Every property is optional; absent means
+        unchanged. No property is nullable, so `null` is a `400`. `status` is
+        deliberately not here.
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      properties:
+        title:
+          type: string
+          minLength: 3
+          maxLength: 80
+        description:
+          type: string
+          maxLength: 4000
+        categoryId:
+          $ref: '#/components/schemas/CategoryId'
+        priceCents:
+          $ref: '#/components/schemas/MoneyCents'
+        currency:
+          $ref: '#/components/schemas/Currency'
+        postcode:
+          $ref: '#/components/schemas/Postcode'
+        imageIds:
+          type: array
+          description: Replaces the whole list, including the cover at index 0.
+          items:
+            $ref: '#/components/schemas/ImageId'
+          minItems: 0
+          maxItems: 20
+
+    StatusChangeRequest:
+      title: StatusChangeRequest
+      description: |
+        Body of `POST /listings/{id}/status`. `draft` is not a legal target:
+        nothing transitions back into `draft`.
+      type: object
+      additionalProperties: false
+      required:
+        - status
+      properties:
+        status:
+          description: The target status.
+          type: string
+          enum:
+            - published
+            - paused
+            - expired
+            - deleted
+        reason:
+          description: |
+            Free-text marker for who or what triggered the transition. Carried
+            through to the status-history row and otherwise unused.
+          type: string
+          maxLength: 120
+
+    ListingPage:
+      title: ListingPage
+      description: One page of search results.
+      type: object
+      additionalProperties: false
+      required:
+        - items
+        - nextCursor
+      properties:
+        items:
+          type: array
+          description: Published listings only.
+          items:
+            $ref: '#/components/schemas/Listing'
+        nextCursor:
+          type: [string, 'null']
+          description: |
+            Cursor for the next page, or `null` on the last page. Opaque: do not
+            parse it, do not store it past the result set it belongs to.
+
+    Category:
+      title: Category
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - legacyId
+        - parentId
+        - name
+      properties:
+        id:
+          $ref: '#/components/schemas/CategoryId'
+        legacyId:
+          type: integer
+          description: |
+            Pre-2024 numeric id. Still referenced in places; `domain.md` records
+            that nobody has counted where.
+        parentId:
+          type: [string, 'null']
+          description: Null for a top-level category.
+        name:
+          type: string
+          minLength: 1
+          maxLength: 80
+          description: Display name.
+
+    CategoryTreeNode:
+      title: CategoryTreeNode
+      description: |
+        A top-level category with its leaves. The tree is exactly two levels
+        deep, so `children` entries never carry `children` of their own.
+      allOf:
+        - $ref: '#/components/schemas/Category'
+        - type: object
+          properties:
+            children:
+              type: array
+              description: |
+                Leaf categories. Present on top-level nodes, absent on leaves.
+                Only leaves carry listings.
+              items:
+                $ref: '#/components/schemas/Category'
+
+    SavedSearchFilters:
+      title: SavedSearchFilters
+      description: |
+        The filter half of a saved search. Field for field the same filters as
+        the `GET /listings` query parameters. Every field is optional; an empty
+        object means the free-text `query` alone decides.
+      type: object
+      additionalProperties: false
+      properties:
+        categoryId:
+          $ref: '#/components/schemas/CategoryId'
+        priceMinCents:
+          $ref: '#/components/schemas/MoneyCents'
+        priceMaxCents:
+          $ref: '#/components/schemas/MoneyCents'
+        postcode:
+          $ref: '#/components/schemas/Postcode'
+        radiusKm:
+          type: integer
+          minimum: 1
+          description: Requires `postcode`.
+
+    SavedSearch:
+      title: SavedSearch
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - sellerId
+        - label
+        - query
+        - filters
+        - notify
+        - lastMatchedAt
+      properties:
+        id:
+          allOf: [{ $ref: '#/components/schemas/SavedSearchId' }]
+          readOnly: true
+        sellerId:
+          allOf: [{ $ref: '#/components/schemas/SellerId' }]
+          description: |
+            The owner. Buyers and sellers are one account type, so a saved search
+            is owned by a `sellerId` like a listing is.
+          readOnly: true
+        label:
+          type: string
+          minLength: 1
+          maxLength: 80
+          description: User-supplied and renameable.
+        query:
+          type: string
+          maxLength: 200
+          description: Free text. May be empty when the filters carry the search.
+        filters:
+          $ref: '#/components/schemas/SavedSearchFilters'
+        notify:
+          type: boolean
+          description: |
+            Whether a new published match emits `savedsearch.matched`. See
+            `docs/project/contracts/events.md`.
+        lastMatchedAt:
+          type: [string, 'null']
+          format: date-time
+          description: UTC. Null until the first match.
+          readOnly: true
+
+    SavedSearchCreate:
+      title: SavedSearchCreate
+      type: object
+      additionalProperties: false
+      required:
+        - label
+      properties:
+        label:
+          type: string
+          minLength: 1
+          maxLength: 80
+        query:
+          type: string
+          maxLength: 200
+          default: ''
+        filters:
+          $ref: '#/components/schemas/SavedSearchFilters'
+        notify:
+          type: boolean
+          default: false
+
+    SavedSearchPatch:
+      title: SavedSearchPatch
+      description: |
+        Every property optional; absent means unchanged. `filters` is replaced
+        wholesale, not merged.
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      properties:
+        label:
+          type: string
+          minLength: 1
+          maxLength: 80
+        query:
+          type: string
+          maxLength: 200
+        filters:
+          $ref: '#/components/schemas/SavedSearchFilters'
+        notify:
+          type: boolean
+
+    # The only permitted public shape of a seller. `email` is absent by
+    # construction, not by filtering (invariant 6). No endpoint in this contract
+    # returns it yet: `domain.md` defines no seller endpoint, and the schema is
+    # kept here so that any future one has a shape to reuse rather than invent.
+    SellerPublic:
+      title: SellerPublic
+      description: |
+        Public projection of a seller: `id`, `displayName`, and whether the
+        account is commercial. Seller email never appears in a response, an
+        event payload or the warehouse.
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - displayName
+        - isCommercial
+      properties:
+        id:
+          $ref: '#/components/schemas/SellerId'
+        displayName:
+          type: string
+          minLength: 1
+          maxLength: 80
+          description: Shown publicly.
+        isCommercial:
+          type: boolean
+          description: Commercial sellers have different listing limits.
+
+    Problem:
+      title: Problem
+      description: |
+        RFC 9457 problem details. Every error response in this contract uses this
+        shape with media type `application/problem+json`.
+      type: object
+      required:
+        - type
+        - title
+        - status
+      properties:
+        type:
+          type: string
+          format: uri
+          description: |
+            Stable identifier of the problem kind. Clients branch on this, never
+            on `detail`.
+          default: about:blank
+          examples:
+            - https://kiezmarkt.example/problems/illegal-status-transition
+        title:
+          type: string
+          description: Short, human-readable, constant per `type`.
+        status:
+          type: integer
+          minimum: 400
+          maximum: 599
+          description: Repeats the HTTP status code.
+        detail:
+          type: string
+          description: |
+            Human-readable explanation of this occurrence. Free text. Never
+            carries a seller email or any other PII.
+        instance:
+          type: string
+          format: uri-reference
+          description: URI of the specific occurrence.

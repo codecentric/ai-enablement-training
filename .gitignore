@@ -1,0 +1,14 @@
+# Java / Maven
+backend/target/
+*.class
+
+# Node / Astro
+frontend/node_modules/
+frontend/dist/
+frontend/.astro/
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

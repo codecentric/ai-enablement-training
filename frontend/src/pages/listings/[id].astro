@@ -1,0 +1,12 @@
+---
+export const prerender = false;
+
+import Layout from '../../layouts/Layout.astro';
+import { ListingDetailApp } from '../../components/ListingDetailApp';
+
+const { id } = Astro.params;
+---
+
+<Layout title="Listing">
+  <ListingDetailApp listingId={id as string} client:load />
+</Layout>

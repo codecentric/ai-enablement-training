@@ -23,6 +23,10 @@ function flattenCategories(tree: CategoryTreeNode[]): { id: string; name: string
 }
 
 function readFiltersFromLocation(): SearchFilters {
+  // Runs on the server too (client:load renders this component during SSR),
+  // where there is no window. Server render starts from empty filters; the
+  // hydrated client re-reads the URL on mount.
+  if (typeof window === 'undefined') return {};
   return parseFiltersFromSearchParams(new URLSearchParams(window.location.search));
 }
 

@@ -1,0 +1,36 @@
+# Toolchain for the Kiezmarkt reference implementation.
+# `mise install` in this directory sets up everything needed to run it.
+#
+#   backend/  — Spring Boot 3.3.5, needs Java 21 (backend/pom.xml: java.version)
+#   frontend/ — Astro 7 + React 19, needs Node >= 22.12 (frontend/package.json: engines)
+
+[tools]
+java = "21"
+node = "24"
+
+# --- run ----------------------------------------------------------------------
+
+[tasks.backend]
+description = "Run the Spring Boot listing service on http://localhost:8080/v1"
+run = "cd backend && ./mvnw spring-boot:run"
+
+[tasks.backend-test]
+description = "Run the backend test suite (first run downloads Maven and dependencies)"
+run = "cd backend && ./mvnw test"
+
+[tasks.frontend]
+description = "Run the Astro dev server on http://localhost:4321"
+run = "cd frontend && npm run dev"
+
+[tasks.frontend-test]
+description = "Run the frontend vitest suite"
+run = "cd frontend && npm run test"
+
+# --- install -------------------------------------------------------------------
+
+[tasks.install]
+description = "Install toolchain (mise), frontend deps (npm)"
+run = """
+mise install
+cd frontend && npm install
+"""

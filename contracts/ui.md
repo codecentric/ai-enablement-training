@@ -1,11 +1,3 @@
----
-kunde: adevinta
-stand: 2026-08-31
-status: Entwurf — Leitprojekt für das AI-Enablement-Training
-zweck: Interface-Kontrakt Kiezmarkt für die Rollengruppen Frontend und Mobile
-updated: 2026-08-31
----
-
 # Kiezmarkt — the interface contract
 
 Scope: the **Search & filter** surface (web) and the **Saved searches** surface

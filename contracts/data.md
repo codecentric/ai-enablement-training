@@ -1,11 +1,3 @@
----
-kunde: adevinta
-stand: 2026-08-31
-status: Entwurf — Leitprojekt für das AI-Enablement-Training
-zweck: Warehouse-Kontrakt Kiezmarkt für die Rollengruppe Data
-updated: 2026-08-31
----
-
 # Kiezmarkt — the warehouse contract
 
 Scope: the **Marketplace report** surface from `docs/project/domain.md`. Python on

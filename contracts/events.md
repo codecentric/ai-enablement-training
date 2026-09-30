@@ -1,11 +1,3 @@
----
-kunde: adevinta
-stand: 2026-08-31
-status: Entwurf — Leitprojekt für das AI-Enablement-Training
-zweck: Event-Kontrakte des Listing-Service im Leitprojekt Kiezmarkt
-updated: 2026-08-31
----
-
 # Kiezmarkt — listing service events
 
 The listing service publishes one Kafka topic: `savedsearch.matched`. The

@@ -1,20 +1,8 @@
----
-kunde: adevinta
-stand: 2026-08-31
-status: Entwurf — Leitprojekt für das AI-Enablement-Training
-zweck: Domänenmodell des Leitprojekts Kiezmarkt
-updated: 2026-08-31
----
-
 # Kiezmarkt — the domain
 
 Kiezmarkt is a neighbourhood classifieds marketplace. People list things they no
 longer need, other people find them through search, save the searches they care
 about, and get told when something new matches.
-
-It is synthetic. No Kleinanzeigen service is named, reproduced or implied. The
-domain is close enough to daily work that nobody has to translate, and far enough
-that nobody has to defend how it is really done.
 
 ## The four surfaces
 

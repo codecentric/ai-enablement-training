@@ -1,11 +1,3 @@
----
-kunde: adevinta
-stand: 2026-08-31
-status: Entwurf — Leitprojekt für das AI-Enablement-Training
-zweck: Wie eine Gruppe das Kiezmarkt-Skelett im eigenen Stack erzeugt
-updated: 2026-08-31
----
-
 # Bootstrap Kiezmarkt in your stack
 
 Kiezmarkt ships as contracts, not as code. Your group generates the skeleton in the
@@ -18,7 +10,7 @@ an agent today, and it is also the first thing you will criticise.
 ## Before you start
 
 You need: Claude Code working (`/doctor` if anything feels off), an empty directory,
-and the contracts in `docs/project/contracts/`.
+and the contracts in `contracts/`.
 
 One person per group runs the bootstrap and shares the result. Do not run it four
 times in parallel and then reconcile.
@@ -29,7 +21,7 @@ Use this one. Do not improve it yet — the point is that everyone starts from t
 same instruction, and the differences you get anyway are the interesting part.
 
 ```
-Read docs/project/domain.md and everything in docs/project/contracts/.
+Read domain.md and everything in contracts/.
 
 Build a runnable skeleton of the Kiezmarkt listing service in <YOUR STACK>.
 

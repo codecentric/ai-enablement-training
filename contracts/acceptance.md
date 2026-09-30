@@ -1,11 +1,3 @@
----
-kunde: adevinta
-stand: 2026-08-31
-status: Entwurf — Leitprojekt für das AI-Enablement-Training
-zweck: Akzeptanzkriterien je Backlog-Item, stack-unabhängig
-updated: 2026-08-31
----
-
 # Acceptance criteria
 
 Stack-independent criteria for the items in `backlog.md`. They are written so that a

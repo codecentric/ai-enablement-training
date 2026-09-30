@@ -1,6 +1,6 @@
 # Acceptance criteria
 
-Stack-independent criteria for the items in `backlog.md`. They are written so that a
+Stack-independent criteria for the items in `docs/project/backlog.md`. They are written so that a
 Java group, a Swift group and a `dbt` group can each turn the same line into a test in
 their own idiom without translating anyone else's framework.
 

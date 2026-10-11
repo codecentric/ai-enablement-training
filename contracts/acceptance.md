@@ -110,25 +110,6 @@ Must be answered before writing code:
 These are independent choices and both have to be made. A `dbt` run that passes is not
 evidence here: the tests are configured to `warn`.
 
-## Block 6.3 — the loop exercise
-
-The four `legacyId` migration items are a **paper exercise**. Nothing runs. What they
-need is not a test suite but a *done definition a machine could check*, because that is
-the sensor the loop sheet asks for and the line most groups cannot fill.
-
-A usable done definition for all four has the same two halves:
-
-1. **Progress.** No numeric category reference remains outside the one place that is
-   allowed to hold the mapping. Countable.
-2. **Correctness.** The existing suite is green, and a named boundary was not touched.
-
-Both halves are required. A sensor with only the second reports success on a repository
-where nothing has been migrated, because the old code still works. A sensor with only
-the first reports success on a repository that has been migrated wrongly.
-
-Each of the four backlog items names a different way that sensor can lie. Finding it is
-the exercise.
-
 ## The one criterion that applies to everything
 
 No floating-point arithmetic in a money path, at any layer, in any language.

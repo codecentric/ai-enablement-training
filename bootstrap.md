@@ -91,10 +91,6 @@ generating and do this instead:
 - **Narrow the prompt.** Drop `POST`, `PATCH` and saved searches. `GET /listings`,
   `GET /listings/{id}` and a passing test are enough substrate for every block on
   day 1.
-- **Ask your trainer for a neighbouring group's skeleton.** Comparing two is not a
-  consolation prize, it is better material than one.
-- Blocks 2, 5.1, 6.3, 7 and 9 are design work and run fine on a partial skeleton.
-  Only 6.1/6.2 and 8 need code that executes.
 
 ## Then, and only then: `/init`
 

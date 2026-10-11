@@ -1,8 +1,7 @@
 # Kiezmarkt — the backlog
 
 Everything the hands-on blocks run on. Read `domain.md` first: entities, invariants,
-and the list of things the domain deliberately leaves open. Read `ops.md` before
-block 7; the risk tables below are unusable without it.
+and the list of things the domain deliberately leaves open.
 
 Four role groups work in parallel and never mix: **Backend**, **Frontend**, **Mobile**
 (iOS and Android together), **Data**. Groups are formed by role. Nobody in a group is
@@ -101,8 +100,6 @@ the current data. Park it in example mapping; an agent will pick one and sound c
 
 ### KA-4488 · Replace numeric category references in the listing service
 
-**Block 6.3 — loop engineering. Paper exercise, nothing is run.**
-
 Categories carry a current string `id` (`elektronik.audio`) and a pre-2024 numeric
 `legacyId`. The numeric form is still referenced in the code. Which categories are
 still referenced that way has never been counted (`domain.md`). Replace the numeric
@@ -120,26 +117,6 @@ overshoots, and a count that is wrong at the start is a stop criterion that neve
 
 **Boundary the agent must not cross.** The Flyway migration files and the OpenAPI
 contract under `contracts/`.
-
-### Block 7 — risk classification
-
-Place these on the matrix and argue the placement. **The rows are not in risk order.**
-Facts come from `ops.md`.
-
-| # | Task | Facts that bear on it |
-| :--- | :--- | :--- |
-| B1 | Add a field to the `savedsearch.matched` payload | The one topic that exists. The notification service consumes it and ships on its own cadence, and an event that has been consumed cannot be taken back |
-| B2 | Write characterisation tests for `PriceFormatter` against current behaviour | Tests change nothing in production. They also freeze the `0`-versus-`null` reading as if it had been decided |
-| B3 | Add Javadoc and `@Deprecated` to unused DTO accessors | Compiler-checked, no runtime path |
-| B4 | Move the notification HTTP call outside the write transaction | The write path for every status change. Precedent: 2026-02-11 |
-| B5 | Change the default search page size from 25 to 50 | One line, reversible in 6 minutes. Both apps paginate against it, and ordering across pages is not guaranteed |
-| B6 | Generate test-data builders for the 120-listing seed set | Test scope only. The builders become the shared definition of what normal data looks like |
-| B7 | Add an optional `priceMaxCents` filter to the search API | Additive. Read by web, both apps and the support tool. Behaviour for listings with no price is undefined |
-| B8 | Run the migration that drops the `legacy_category_id` column | Forward-only. A dropped column comes back as a restore, not a redeploy |
-
-*Trainer note:* B2 and B5 are the intended disagreements. B2 looks like the safest row
-on the table and quietly settles a domain question; B5 looks trivial and is fully
-reversible, but it changes behaviour in two binaries that are not.
 
 ---
 
@@ -217,8 +194,6 @@ unpriced, and whether a listing with no price should be inside or outside a
 
 ### KA-3110 · Replace numeric category references in the front end
 
-**Block 6.3 — loop engineering. Paper exercise, nothing is run.**
-
 Same migration as `KA-4488`, seen from the other side: numeric `legacyId` values are
 still used where category ids are built, read and reported. Replace them with the
 current string form. Which ones are still in use has never been counted.
@@ -234,26 +209,6 @@ green typecheck stops halfway and reports success.
 
 **Boundary the agent must not cross.** The analytics event *names*. Growth's dashboards
 key on them and a rename is invisible until the following week.
-
-### Block 7 — risk classification
-
-**The rows are not in risk order.** Facts come from `ops.md`.
-
-| # | Task | Facts that bear on it |
-| :--- | :--- | :--- |
-| F1 | Show the seller's email on the listing detail page for signed-in buyers | `seller.email` is PII and stops at the service boundary (`domain.md`, invariant 6) |
-| F2 | Change how `priceCents: null` renders on the listing card | Pure render, reversible in 5 minutes. No alert, no test, and a user who sees `0,00 €` concludes the item is free |
-| F3 | Add `data-testid` attributes to the filter controls | Test-only attributes, no visual or behavioural change |
-| F4 | Shorten the filter query parameter names in the URL | Deep links, the back button and crawler-visible URLs all read them. CDN caches assets up to 24 h |
-| F5 | Move the panel's analytics events off markup binding onto explicit calls | No user-visible change. Growth reads the dashboards weekly, and a detached event still draws a line |
-| F6 | Convert one component's inline styles to design-system tokens | Intended as a no-op. Verified by a snapshot suite that exists |
-| F7 | Rewrite the empty-state copy on the result list | User-facing text, shipped in 9 minutes, reversible in 5 |
-| F8 | Add visual snapshot stories for the listing card | Test scope. The stories become the reference for what correct looks like |
-
-*Trainer note:* F2 and F5 are the intended disagreements. Both are technically small and
-fully reversible, and both fail in a way nobody detects for at least a week.
-
----
 
 ## Mobile
 
@@ -323,8 +278,6 @@ copy decision nobody has made, and an agent will make it.
 
 ### KA-3902 · Replace numeric category references in both apps
 
-**Block 6.3 — loop engineering. Paper exercise, nothing is run.**
-
 Same migration as `KA-4488`, across two codebases and two languages. Numeric `legacyId`
 values are still used where categories are parsed, filtered and reported. Which ones are
 still in use has never been counted.
@@ -343,27 +296,6 @@ that the installed population is.
 **Boundary the agent must not cross.** The persisted store's schema version. Changing it
 without a read path for the old form breaks every device that upgrades, and no rollback
 reaches them.
-
-### Block 7 — risk classification
-
-**The rows are not in risk order.** Facts come from `ops.md`.
-
-| # | Task | Facts that bear on it |
-| :--- | :--- | :--- |
-| M1 | Turn on match notifications for saved searches created before the setting existed | A sent notification cannot be unsent. These users never opted in |
-| M2 | Raise the local cache TTL from 5 minutes to 24 hours | A config one-liner. How stale is too stale is undecided (`domain.md`), and the change ships in a binary that cannot be recalled |
-| M3 | Add snapshot tests for the saved-search cell on both platforms | Test scope. They become the reference for what correct looks like |
-| M4 | Change how a listing with no price renders in the cell | Small, local, and shipping to devices that will run it for months. No alert, no test |
-| M5 | Extract a shared formatting helper with no behaviour change | Covered by the existing unit suite on both platforms |
-| M6 | Queue rename and delete while offline and replay on reconnect | User data, conflict on reconnect, and a user-visible answer to "what happened to my change" |
-| M7 | Update a localisation string on the offline empty state | Ships on the next train, 4–10 days on iOS. Wrong copy stays wrong for a fortnight |
-| M8 | Add an offline banner component to the saved searches screen | The design system has no component for stale data. Whatever ships becomes the de facto one |
-
-*Trainer note:* M2 and M4 are the intended disagreements. Both are the kind of change
-that would be waved through on the web front end. The argument is about what the release
-train does to a change that is otherwise trivial.
-
----
 
 ## Data
 
@@ -432,8 +364,6 @@ price.
 **Scope.** One model, one column, the tests that assert on a value rather than a shape.
 
 ### KA-1611 · Replace numeric category references in the warehouse
-
-**Block 6.3 — loop engineering. Paper exercise, nothing is run.**
 
 Same migration as `KA-4488`, in `dbt`. Numeric `legacyId` values are still used in
 category logic. Which ones are still in use has never been counted.

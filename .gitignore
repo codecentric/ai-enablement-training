@@ -12,3 +12,6 @@ npm-debug.log*
 .DS_Store
 .idea/
 .vscode/
+
+# Claude Code, personal settings
+.claude/settings.local.json

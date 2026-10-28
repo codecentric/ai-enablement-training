@@ -1,13 +1,13 @@
 # Acceptance criteria
 
 Stack-independent criteria for the items in `docs/project/backlog.md`. They are written so that a
-Java group, a Swift group and a `dbt` group can each turn the same line into a test in
+Java group, a TypeScript group and a Swift group can each turn the same line into a test in
 their own idiom without translating anyone else's framework.
 
 ## What is deliberately not in here
 
-**The four block 2 planning tickets have no acceptance criteria, and they are not
-getting any.** `KA-4417`, `KA-2986`, `KA-3771` and `KA-1502` are the planning exercise.
+**The three block 2 planning tickets have no acceptance criteria, and they are not
+getting any.** `KA-4417`, `KA-2986` and `KA-3771` are the planning exercise.
 Setting the definition of done before a prompt runs is the thing being practised, and
 handing it over would remove the exercise. If a group asks where the criteria are, the
 answer is that writing them is phase 2.
@@ -90,25 +90,6 @@ Must be answered before writing code:
   decision, nobody has made it, and an agent will make it silently.
 - Who owns the string when the server pre-renders it for the push payload and ships on
   a third release cycle.
-
-### `KA-1560` — price columns in the weekly report (Data)
-
-Must hold:
-
-| Given | Then |
-| :--- | :--- |
-| A category containing listings with no price | The median is defined and the model produces a row |
-| The same input twice | The same output. The model is idempotent under re-run |
-| Any category | The listing count behind the price column agrees with the existing per-category listing count. They cannot disagree about which listings are in the category |
-| The three seed listings at `0` and the seven with no price | Their treatment is asserted on by a test that checks a value, not a shape |
-
-Must be answered before writing code:
-
-- Whether `0` is a price. It moves the median if counted.
-- Whether a listing with no price leaves the denominator or stays in it.
-
-These are independent choices and both have to be made. A `dbt` run that passes is not
-evidence here: the tests are configured to `warn`.
 
 ## The one criterion that applies to everything
 

@@ -12,9 +12,6 @@ an agent today, and it is also the first thing you will criticise.
 You need: Claude Code working (`/doctor` if anything feels off), an empty directory,
 and the contracts in `contracts/`.
 
-One person per group runs the bootstrap and shares the result. Do not run it four
-times in parallel and then reconcile.
-
 ## The prompt
 
 Use this one. Do not improve it yet — the point is that everyone starts from the
@@ -41,15 +38,11 @@ Stop when the test command and the start command both work.
 Replace `<YOUR STACK>` with what your group works in, in one line. Be specific about
 the language and the framework, and say nothing about structure:
 
-| Role group | Example |
-| :--- | :--- |
-| Backend | `Java 21 with Spring Boot` |
-| Frontend | `TypeScript with Astro and React` |
+| Role group | Example                                               |
+| :--- |:------------------------------------------------------|
+| Backend | `Java 25 with Spring Boot`                            |
+| Frontend | `TypeScript with Astro and React`                     |
 | Mobile | `Kotlin with Jetpack Compose` or `Swift with SwiftUI` |
-| Data | `Python with dbt against DuckDB` |
-
-Data groups build against `contracts/data.md` instead of `api.yaml`: the source
-tables, the staging models and `mart_weekly_marketplace`, loaded from the seed data.
 
 ## What the skeleton must have when you are done
 

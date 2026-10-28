@@ -10,7 +10,7 @@ allowed-tools: Bash(python3 "${CLAUDE_SKILL_DIR}/copy_docs.py" *), Bash(git -C *
 
 Copy the Kiezmarkt docs from this training repo into `docs/project/` of your
 own Kiezmarkt project: `domain.md`, `ops.md`, `backlog.md`, and `contracts/`
-with `api.yaml`, `events.md`, `ui.md`, `data.md` and `acceptance.md`.
+with `api.yaml`, `events.md`, `ui.md` and `acceptance.md`.
 
 Run this in the training repo, the folder you cloned. Without a folder name,
 the script looks for one `my-kiezmarkt*` folder inside the training repo or

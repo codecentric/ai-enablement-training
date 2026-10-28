@@ -29,7 +29,6 @@ FILES = {
     "contracts/api.yaml": "contracts/api.yaml",
     "contracts/events.md": "contracts/events.md",
     "contracts/ui.md": "contracts/ui.md",
-    "contracts/data.md": "contracts/data.md",
     "contracts/acceptance.md": "contracts/acceptance.md",
 }
 
@@ -43,13 +42,11 @@ CUTS = {
          "These are not oversights.\n"),
     ],
     "docs/project/backlog.md": [
-        ("text", "| **7** — risk classification | 8 tasks | 8 tasks | 8 tasks | 8 tasks |\n", ""),
         ("text",
-         "The four block 2 tickets each carry a **Proposed approach** quoted from a colleague. It\n"
+         "The three block 2 tickets each carry a **Proposed approach** quoted from a colleague. It\n"
          "is plausible, confidently phrased, and either wrong or much smaller than the real\n"
          "problem. An agent will not object to it unaided. That is the point of the block.\n\n",
          ""),
-        ("section", "### Block 7 — risk classification"),
     ],
     "contracts/events.md": [
         ("text",
@@ -65,15 +62,6 @@ CUTS = {
         ("text",
          "constraint of the exercise, not an omission from this document.\n",
          "constraint, not an omission from this document.\n"),
-    ],
-    "contracts/data.md": [
-        ("text",
-         "the people who consume the number, and that conversation is the exercise.\n",
-         "the people who consume the number.\n"),
-        ("text",
-         "Block 5.1 of the training audits exactly this list. The gap is the material; do not\n"
-         "close it ahead of the session.\n\n",
-         ""),
     ],
     "contracts/acceptance.md": [
         ("section", "## What is deliberately not in here"),

@@ -4,7 +4,7 @@ Kiezmarkt is a neighbourhood classifieds marketplace. People list things they no
 longer need, other people find them through search, save the searches they care
 about, and get told when something new matches.
 
-## The four surfaces
+## The three surfaces
 
 Each role group works on one surface. The surfaces share the same domain objects,
 so a decision made on one is visible from the others.
@@ -14,7 +14,6 @@ so a decision made on one is visible from the others.
 | **Listing service** | Backend | Listings, their lifecycle, status events, the search API |
 | **Search & filter** | Frontend | Result list, filter panel, listing card, saved searches on web |
 | **Saved searches** | Mobile | The saved searches screen, offline behaviour, match notifications |
-| **Marketplace report** | Data | Weekly aggregates over listings and sellers |
 
 ## Entities
 
@@ -117,14 +116,6 @@ These hold. Code may rely on them.
 6. Seller email never appears in an event payload, a search response, or the
    warehouse.
 
-### One derivation that is not in the domain
-
-The weekly marketplace report is grained *per region*, and there is no region entity
-here. `region_code` is the first two digits of `postcode`, derived inside the
-warehouse in `stg_listings`. It exists nowhere in the service and nobody outside the
-data models has agreed to it. It is recorded here so it is a known shortcut rather
-than an orphan invention. See `contracts/data.md`.
-
 ## Where the domain is deliberately silent
 
 These are not oversights. They are the material for discovery, planning and example
@@ -133,8 +124,6 @@ mapping, and every one of them has bitten somebody in a block.
 - **`priceCents` is typed non-null and the import feed delivers `null`** for
   listings posted without a price ("Zu verschenken"). The type is wrong. Fixing the
   type is out of scope for the training; handling the value is not.
-- **What "active seller" means** is defined nowhere. Not in the code, not in a
-  schema, not in a comment. The person who defined the listing-side metric left.
 - **Whether a price of `0` means free or means unpriced.** Both readings exist in
   the current data.
 - **Which categories are still referenced by `legacyId`.** Some are. Nobody has
@@ -155,5 +144,4 @@ Every bootstrap produces the same seed set, so groups can compare results:
 - 12 saved searches, 5 with `notify: true`
 - 4 categories that still carry a `legacyId` reference somewhere in the code
 
-The exact fixtures are defined in `contracts/api.yaml` (`examples`) and
-`contracts/data.md` (seed tables).
+The exact fixtures are defined in `contracts/api.yaml` (`examples`).

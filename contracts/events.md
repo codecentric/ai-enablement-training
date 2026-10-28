@@ -24,8 +24,8 @@ writes the status change. Three other teams have asked for the same information.
 Each one currently means another outbound call from the same place in the code.
 
 The service does keep its own status history in Postgres. Every accepted transition
-writes a row there, and that table is what the warehouse export reads
-(`contracts/data.md`, `raw_listing_events`). It is a table inside the service, not
+writes a row there, and that table is what the warehouse export reads. It is a
+table inside the service, not
 an interface anybody else reads.
 
 Changing any of this is open work and is not specified here.
